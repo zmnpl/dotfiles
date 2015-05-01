@@ -1,6 +1,6 @@
 " syntax higlighting always on
 syntax on
-color molokai
+color atom-dark
 set number
 
 " brackets
