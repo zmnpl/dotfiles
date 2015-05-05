@@ -10,10 +10,10 @@
 
 ############################
 
-########## linking of dotfiles
-########## Variables
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles/backup             # old dotfiles backup directory
+# linking of dotfiles
+# Variables
+dir=~/dotfiles # dotfiles directory
+olddir=~/dotfiles/backup # old dotfiles backup directory
 # list of files/folders to symlink in homedir
 files="
 vim

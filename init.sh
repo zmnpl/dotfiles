@@ -16,6 +16,7 @@ https://github.com/fatih/vim-go.git
 "
 # just clone all plugins / tools
 echo "cloning vim plugins"
+mkdir -p vim/bundle/
 cd vim/bundle/
 # do for every plugin
 for p in $plugins; do
