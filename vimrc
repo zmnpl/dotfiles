@@ -1,6 +1,7 @@
 " syntax higlighting always on
 syntax on
-color atom-dark
+set t_Co=256
+color molokai
 set number
 
 " brackets
@@ -13,8 +14,6 @@ inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
 
-
-
 " tabs
 filetype plugin indent on
 set tabstop=4
@@ -22,7 +21,14 @@ set shiftwidth=4
 " next command replaces tabstop with approriate number of spaces
 " set expandtab
 
+" show tabs with special character
+"set list
+"set listchars=tab:>-,trail:~,extends:>,precedes:<
+
 set autoindent
+
+" highlight selection
+set hlsearch
 
 " pathogen plugin manager
 execute pathogen#infect()
