@@ -13,8 +13,13 @@
 ########## linking of dotfiles
 ########## Variables
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vim zprezto bashrc vimrc"    # list of files/folders to symlink in homedir
+olddir=~/dotfiles/backup             # old dotfiles backup directory
+# list of files/folders to symlink in homedir
+files="
+vim
+zprezto
+bashrc
+vimrc"
 ##########
 
 # create dotfiles_old in homedir
@@ -38,6 +43,7 @@ done
 ############################
 # install prezto if not already
 ############################
+cd ~
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"

@@ -1,7 +1,7 @@
 " syntax higlighting always on
 syntax on
 set t_Co=256
-color molokai
+color atom-dark-256
 set number
 
 " brackets
