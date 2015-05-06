@@ -43,7 +43,14 @@ done
 ############################
 # install prezto if not already
 ############################
-setopt EXTENDED_GLOB
+# todo - find out, why loop is not working
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+# workaround for loop
+#ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
+#ln -s ~/.zprezto/runcoms/zlogout ~/.zlogout
+#ln -s ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
+#ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
+#ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
+#ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
