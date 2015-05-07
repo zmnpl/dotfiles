@@ -24,11 +24,11 @@ mkdir -p vim/bundle/
 cd vim/bundle/
 # do for every plugin
 for p in $vimplugins; do
-    #if [ ! -d "neocomplete.vim" ]; then
-    #  git clone $p
-    #fi
-    # todo: check for existence first    
-    git clone $p
+    if [ ! -d "$p" ]; then
+      git clone $p
+    fi
+    # todo: check for existence first
+   # git clone $p
 done
 cd $basedir
 ############################################
@@ -42,5 +42,5 @@ git clone --recursive https://github.com/zmnpl/prezto.git zprezto
 ############################################
 # run dotfile installation
 echo "run dotfile installation script"
-sh install_dotfiles.sh
+./install_dotfiles.sh
 ############################################
