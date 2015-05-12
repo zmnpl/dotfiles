@@ -1,0 +1,138 @@
+#!/bin/perl
+use strict;
+use warnings;
+use v5.10;
+use File::Path qw(make_path);
+use File::Copy;
+use File::Basename;
+use Cwd;
+use LWP::Simple;
+##########################################################
+# author: simon paul
+# email: simonpaul@mailbox.org
+# attention: feel free to use, modify, distribute on own risk!
+
+##########################################################
+# instructions
+# search for settings comment to set configure everything
+# maybe push more files into @dotfiles
+##########################################################
+# general
+#
+# settings
+my $printspacer = "#######################################################";
+my $home = glob("~/");
+my $dotfolder = $home."dotfiles/";
+my $oldfiles = $dotfolder."backup/";
+my @dotfiles; # push all dotfiles in here
+
+chdir $dotfolder;
+push(@dotfiles, $dotfolder."bashrc");
+##########################################################
+# vim
+#
+# settings
+my $vimdir = $dotfolder."vim/";
+my @vimPlugins = qw(
+https://github.com/Shougo/neocomplete.vim.git
+https://github.com/scrooloose/nerdtree.git
+https://github.com/majutsushi/tagbar.git
+https://github.com/bling/vim-airline.git
+https://github.com/ntpeters/vim-better-whitespace.git
+https://github.com/fatih/vim-go.git
+);
+# vim dotfiles
+push(@dotfiles, $vimdir);
+push(@dotfiles, $dotfolder."vimrc");
+
+# pathogen
+# todo - remove old pathogen before...
+say("downloading pathogen");
+getstore('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
+if (! -d $vimdir."/bundle/") {
+	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."bundle/: $!");
+}
+
+# other plugins as each plugin 
+foreach(@vimPlugins) {
+	my ($folder) = $_ =~ m/.*\/(.*)\.git/;
+	my $plugin = $vimdir."/bundle/".$folder;
+	&gitCloneOrPull($_, $plugin);
+}
+
+##########################################################
+# zsh - prezto
+#
+# settings
+my $preztodir = $dotfolder."zprezto/";
+# zsh/prezto dotfiles
+push(@dotfiles, $preztodir);
+
+gitCloneOrPull("https://github.com/zmnpl/prezto.git", $preztodir);
+# todo - maybe use wrapper here...
+#if (! -d $preztodir) {
+#	say("cloning prezto");
+#	system("git", "clone", "--recursive", "https://github.com/zmnpl/prezto.git", $preztodir);
+#} else {
+#	say("$preztodir existed already; run pull instead")
+#}
+
+# push all prezto configs to @dotfiles
+foreach(glob($preztodir."runcoms/z*")) {
+	push(@dotfiles, $_)
+}
+
+##########################################################
+# linking - actual installation
+#
+#settings
+foreach(@dotfiles) {
+	&dotLink($home, $_);
+}
+
+##########################################################
+
+# checks if given directory exists
+# if so switches into it and pulls (i.e. update repo)
+# if not clones
+sub gitCloneOrPull() {
+	my $repo = shift;
+	my $destination = shift;
+	if (! -d $destination) {
+		say($printspacer);
+		say("cloning ".basename($destination)); # todo - maybe use git wrapper
+		system("git", "clone", "--recursive",$repo, $destination);
+		say($printspacer);
+	} else {
+		say($printspacer);
+		say("updating ".basename($destination));
+		my $dir = getcwd;
+		chdir $destination;
+		system("git", "pull");
+		system("git", "submodule", "foreach", "--recursive", "git", "pull");
+		chdir $dir;
+		say($printspacer);
+	}
+}
+
+# creates .dotfile link in given destination
+# saves copy in backup folder, if it was an actual file and not a symlink
+sub dotLink() {
+	my $destination = shift;
+	my $dotfile = shift;
+	$destination = $destination.".".basename($dotfile);
+
+	if(-l $destination) {
+		unlink $destination # symlinks will be removed anyways; nothing to backup here ...
+	} elsif (-f $destination || -d $destination) {
+		say("backing up $destination");
+		move($destination, $oldfiles.time().basename($dotfile)) || die "could not backup $destination: $!" # timestamp in filename to avoid overwriting
+	}
+
+	my $linked = eval { symlink($dotfile, $destination); 1 };
+	if($linked) {
+		say("created symlink: $dotfile -> $destination")
+	} else {
+		say("could not create symlink: $dotfile -> $destination\n$!")
+	}
+}
