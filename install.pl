@@ -1,4 +1,4 @@
-#!/bin/perl
+#!/usr/bin/perl --
 use strict;
 use warnings;
 use v5.10;
@@ -19,6 +19,9 @@ use LWP::Simple;
 ##########################################################
 # general
 #
+# constants
+my $gitRecursive = "rec";
+my $gitNormal = "norm";
 # settings
 my $printspacer = "#######################################################";
 my $home = glob("~/");
@@ -46,18 +49,16 @@ push(@dotfiles, $vimdir);
 push(@dotfiles, $dotfolder."vimrc");
 
 # pathogen
-# todo - remove old pathogen before...
-say("downloading pathogen");
-getstore('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
 if (! -d $vimdir."/bundle/") {
 	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."bundle/: $!");
 }
+updateViaGetStore('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
 
-# other plugins as each plugin 
+# other plugins as each plugin
 foreach(@vimPlugins) {
 	my ($folder) = $_ =~ m/.*\/(.*)\.git/;
 	my $plugin = $vimdir."/bundle/".$folder;
-	&gitCloneOrPull($_, $plugin);
+	&gitCloneOrPull($_, $plugin, $gitNormal);
 }
 
 ##########################################################
@@ -68,14 +69,7 @@ my $preztodir = $dotfolder."zprezto/";
 # zsh/prezto dotfiles
 push(@dotfiles, $preztodir);
 
-gitCloneOrPull("https://github.com/zmnpl/prezto.git", $preztodir);
-# todo - maybe use wrapper here...
-#if (! -d $preztodir) {
-#	say("cloning prezto");
-#	system("git", "clone", "--recursive", "https://github.com/zmnpl/prezto.git", $preztodir);
-#} else {
-#	say("$preztodir existed already; run pull instead")
-#}
+gitCloneOrPull("https://github.com/zmnpl/prezto.git", $preztodir, $gitRecursive);
 
 # push all prezto configs to @dotfiles
 foreach(glob($preztodir."runcoms/z*")) {
@@ -90,7 +84,8 @@ foreach(@dotfiles) {
 	&dotLink($home, $_);
 }
 
-##########################################################
+#########################################################################################
+#########################################################################################
 
 # checks if given directory exists
 # if so switches into it and pulls (i.e. update repo)
@@ -98,21 +93,35 @@ foreach(@dotfiles) {
 sub gitCloneOrPull() {
 	my $repo = shift;
 	my $destination = shift;
-	if (! -d $destination) {
-		say($printspacer);
-		say("cloning ".basename($destination)); # todo - maybe use git wrapper
-		system("git", "clone", "--recursive",$repo, $destination);
-		say($printspacer);
-	} else {
-		say($printspacer);
-		say("updating ".basename($destination));
-		my $dir = getcwd;
-		chdir $destination;
-		system("git", "pull");
-		system("git", "submodule", "foreach", "--recursive", "git", "pull");
-		chdir $dir;
-		say($printspacer);
+	my $mode = shift;
+	my $dir = getcwd;
+
+	say($printspacer);
+	# decide if git with submodules or without
+	# checks, if destination already exists; if so updates instead of pulling
+	if ($mode eq $gitNormal){
+		if (! -d $destination) {
+			say("cloning ".basename($destination)); # todo - maybe use git wrapper
+			system("git", "clone", $repo, $destination);
+		} else {
+			say("updating ".basename($destination));
+			chdir $destination;
+			system("git", "pull");
+			chdir $dir;
+		}
+	} elsif ($mode eq $gitRecursive) {
+		if (! -d $destination) {
+			say("cloning ".basename($destination)); # todo - maybe use git wrapper
+			system("git", "clone", "--recursive", $repo, $destination);
+		} else {
+			say("updating ".basename($destination));
+			chdir $destination;
+			system("git", "pull");
+			system("git", "submodule", "foreach", "--recursive", "git", "pull", "origin", "master");
+			chdir $dir;
+		}
 	}
+	say($printspacer);
 }
 
 # creates .dotfile link in given destination
@@ -134,5 +143,18 @@ sub dotLink() {
 		say("created symlink: $dotfile -> $destination")
 	} else {
 		say("could not create symlink: $dotfile -> $destination\n$!")
+	}
+}
+
+# downloads file with gestore and replaces old one
+sub updateViaGetStore() {
+	my $url = shift;
+	my $file = shift;
+
+	say("downloading $url");
+	my $status = getstore($url, $file."~");
+	if (is_success($status) && -f $file."~") {
+		unlink($file);
+		move($file."~", $file);
 	}
 }
