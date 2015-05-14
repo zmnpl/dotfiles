@@ -36,14 +36,6 @@ push(@dotfiles, $dotfolder."bashrc");
 #
 # settings
 my $vimdir = $dotfolder."vim/";
-my @vimPlugins = qw(
-https://github.com/Shougo/neocomplete.vim.git
-https://github.com/scrooloose/nerdtree.git
-https://github.com/majutsushi/tagbar.git
-https://github.com/bling/vim-airline.git
-https://github.com/ntpeters/vim-better-whitespace.git
-https://github.com/fatih/vim-go.git
-);
 # vim dotfiles
 push(@dotfiles, $vimdir);
 push(@dotfiles, $dotfolder."vimrc");
@@ -54,12 +46,12 @@ if (! -d $vimdir."/bundle/") {
 }
 updateViaGetStore('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
 
-# other plugins as each plugin
-foreach(@vimPlugins) {
-	my ($folder) = $_ =~ m/.*\/(.*)\.git/;
-	my $plugin = $vimdir."/bundle/".$folder;
-	&gitCloneOrPull($_, $plugin, $gitNormal);
-}
+cloneVimPlugin('https://github.com/Shougo/neocomplete.vim.git', $gitNormal);
+cloneVimPlugin('https://github.com/scrooloose/nerdtree.git', $gitNormal);
+cloneVimPlugin('https://github.com/majutsushi/tagbar.git', $gitNormal);
+cloneVimPlugin('https://github.com/bling/vim-airline.git', $gitNormal);
+cloneVimPlugin('https://github.com/ntpeters/vim-better-whitespace.git', $gitNormal);
+cloneVimPlugin('https://github.com/fatih/vim-go.git', $gitNormal);
 
 ##########################################################
 # zsh - prezto
@@ -122,6 +114,14 @@ sub gitCloneOrPull() {
 		}
 	}
 	say($printspacer);
+}
+
+sub cloneVimPlugin() {
+	my $p = shift;
+	my $mode = shift;
+	my ($folder) = $p =~ m/.*\/(.*)\.git/;
+	my $plugin = $vimdir."/bundle/".$folder;
+	&gitCloneOrPull($p, $plugin, $mode);
 }
 
 # creates .dotfile link in given destination
