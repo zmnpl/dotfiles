@@ -1,8 +1,8 @@
 " syntax higlighting always on
 syntax on
 set t_Co=256
-" color atom-dark-256
-color onedark
+color atom-dark-256
+" color onedark
 set number
 
 " brackets
