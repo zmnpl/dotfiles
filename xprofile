@@ -1,0 +1,15 @@
+# compton
+compton -b --config ~/.config/compton.conf --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'
+
+# golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export EDITOR=vim
+
+# android sdk
+export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
+
+# own scripts path
+export PATH=$PATH:~/CloudStation/Linux/scripts
+
+
