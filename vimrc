@@ -1,7 +1,7 @@
 " syntax higlighting always on
 syntax on
 set t_Co=256
-color atom-dark-256
+color maui
 " color onedark
 set number
 
