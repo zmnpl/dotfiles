@@ -1,9 +1,14 @@
 " syntax higlighting always on
 syntax on
 set t_Co=256
-color maui
+set background=dark
+colorscheme pride
+"color pride
 " color onedark
 set number
+
+set encoding=utf-8
+
 
 " brackets
 inoremap {      {}<Left>
@@ -73,7 +78,7 @@ endif
 " set font
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Source\ Code\ Pro\ Regular\ 12
+    set guifont=Source\ Code\ Pro\ Light\ 12
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
