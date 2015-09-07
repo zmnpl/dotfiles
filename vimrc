@@ -3,12 +3,9 @@ syntax on
 set t_Co=256
 set background=dark
 colorscheme pride
-"color pride
-" color onedark
+
 set number
-
 set encoding=utf-8
-
 
 " brackets
 inoremap {      {}<Left>
@@ -79,8 +76,6 @@ endif
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Source\ Code\ Pro\ Light\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
   endif
