@@ -6,7 +6,7 @@ use File::Path qw(make_path);
 use File::Copy;
 use File::Basename;
 use Cwd;
-use LWP::Simple;
+#use LWP::Simple;
 ##########################################################
 # author: simon paul
 # email: simonpaul@mailbox.org
@@ -45,7 +45,7 @@ push(@dotfiles, $dotfolder."vimrc");
 if (! -d $vimdir."/bundle/") {
 	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."bundle/: $!");
 }
-updateViaGetStore('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
+updateViaWget('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
 
 cloneVimPlugin('https://github.com/Shougo/neocomplete.vim.git', $gitNormal);
 cloneVimPlugin('https://github.com/scrooloose/nerdtree.git', $gitNormal);
@@ -148,14 +148,21 @@ sub dotLink() {
 }
 
 # downloads file with gestore and replaces old one
-sub updateViaGetStore() {
+sub updateViaWget() {
 	my $url = shift;
 	my $file = shift;
+	$file = $file;
 
 	say("downloading $url");
-	my $status = getstore($url, $file."~");
-	if (is_success($status) && -f $file."~") {
-		unlink($file);
-		move($file."~", $file);
+	system("wget --output-document=".$file."~"." ".$url);
+	if(-f $file) {
+		unlink($file)
 	}
+	move($file."~", $file)
+
+	#my $status = getstore($url, $file."~");
+	#if (is_success($status) && -f $file."~") {
+	#	unlink($file);
+	#	move($file."~", $file);
+	#}
 }
