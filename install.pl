@@ -32,6 +32,7 @@ my @dotfiles; # push all dotfiles in here
 chdir $dotfolder;
 push(@dotfiles, $dotfolder."bashrc");
 push(@dotfiles, $dotfolder."xprofile");
+push(@dotfiles, $dotfolder."Xresources");
 ##########################################################
 # vim
 #
