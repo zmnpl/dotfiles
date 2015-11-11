@@ -1,0 +1,65 @@
+URxvt.depth: 32
+!URxvt.background: [90]#000000
+!URxvt.foreground: white
+URxvt.scrollBar: false
+URxvt.font: xft:Hack:size=12
+URxvt.geometry: 140x42
+!-------------------------------------------------------------------------------
+! Colors
+URxvt.background: #181818
+URxvt.foreground: #c0c0c0
+!URxvt.cursorColor: #93a1a1
+!! black dark/light
+!urxvt*color0: #121212
+!urxvt*color8: #2e3436
+!! red dark/light
+!urxvt*color1: #a35b66
+!urxvt*color9: #ab6b74
+!! green dark/light
+!urxvt*color2: #99ab6f
+!urxvt*color10: #acb972
+!! yellow dark/light
+!urxvt*color3: #ca9733
+!urxvt*color11: #ccaa69
+!! blue dark/light
+!urxvt*color4: #495d6e
+!urxvt*color12: #687987
+!! magenta dark/light
+!urxvt*color5: #825969
+!urxvt*color13: #977381
+!! cyan dark/light
+!urxvt*color6: #839191
+!urxvt*color14: #98a4a4
+!! white dark/light
+!urxvt*color7: #e0e0e0
+!urxvtcolor15: #e5e5e5
+
+! -------------------------------------------------
+! Author: Cloud
+! vim:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+! -------------------------------------------------
+!black
+urxvt*color0: #443236
+urxvt*color8: #695F6C
+!red
+urxvt*color1: #BE7765 
+urxvt*color9: #D2998B
+!green
+urxvt*color2: #96BE65 
+urxvt*color10: #A5C085
+!yellow
+urxvt*color3: #FCD384 
+urxvt*color11: #FADEA7
+!blue
+urxvt*color4: #9FB5C2
+urxvt*color12: #CED7D2
+!magenta
+urxvt*color5: #9B7E9B 
+urxvt*color13: #B58BB5
+!cyan
+urxvt*color6: #76AF92
+urxvt*color14: #8FC3A9
+!white
+urxvt*color7: #F8F5E2 
+urxvt*color15: #D3C2A9
+
