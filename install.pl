@@ -44,7 +44,10 @@ push(@dotfiles, $dotfolder."vimrc");
 
 # pathogen
 if (! -d $vimdir."/bundle/") {
-	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."bundle/: $!");
+	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."/autoload/: $!");
+}
+if (! -d $vimdir."/autoload/") {
+	make_path($vimdir."/autoload/") || say("could not create ".$vimdir."/autoload/: $!");
 }
 updateViaWget('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
 
