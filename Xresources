@@ -9,7 +9,7 @@ URxvt.depth: 32
 !URxvt.background: [90]#000000
 !URxvt.foreground: white
 URxvt.scrollBar: false
-URxvt.font: xft:Source Code Pro:size=12
+URxvt.font: xft:Source Code Pro:size=13
 URxvt.geometry: 140x42
 !-------------------------------------------------------------------------------
 ! Colors
