@@ -1,8 +1,15 @@
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 URxvt.depth: 32
 !URxvt.background: [90]#000000
 !URxvt.foreground: white
 URxvt.scrollBar: false
-URxvt.font: xft:Hack:size=12
+URxvt.font: xft:Source Code Pro:size=12
 URxvt.geometry: 140x42
 !-------------------------------------------------------------------------------
 ! Colors
