@@ -7,7 +7,7 @@ Xft.rgba: rgb
 
 URxvt.depth: 32
 URxvt.scrollBar: false
-URxvt.font: xft:Source Code Pro:size=12
+URxvt.font: xft:Source Code Pro:size=13
 URxvt.geometry: 140x42
 !-------------------------------------------------------------------------------
 ! Colors
