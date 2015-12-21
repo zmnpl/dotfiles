@@ -1,5 +1,5 @@
 # compton
-compton -b --config ~/.config/compton.conf --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'
+#compton -b --config ~/.config/compton.conf --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'
 
 # golang
 export GOPATH=$HOME/go
