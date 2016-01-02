@@ -4,6 +4,7 @@ Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
+!Xft.rgba: none
 
 URxvt.depth: 32
 URxvt.scrollBar: false
@@ -11,37 +12,98 @@ URxvt.font: xft:Source Code Pro:size=13
 URxvt.geometry: 140x42
 !-------------------------------------------------------------------------------
 ! Colors
-URxvt.background: #181818
-URxvt.foreground: #c0c0c0
+!URxvt.background: #181818
+!URxvt.foreground: #c0c0c0
+
 ! -------------------------------------------------
 ! Author: Cloud
 ! vim:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
 ! -------------------------------------------------
+! black
+!urxvt*color0: #443236
+!urxvt*color8: #695F6C
+! red
+!urxvt*color1: #BE7765 
+!urxvt*color9: #D2998B
+! green
+!urxvt*color2: #96BE65 
+!urxvt*color10: #A5C085
+! yellow
+!urxvt*color3: #FCD384 
+!urxvt*color11: #FADEA7
+! blue
+!urxvt*color4: #9FB5C2
+!urxvt*color12: #CED7D2
+! magenta
+!urxvt*color5: #9B7E9B 
+!urxvt*color13: #B58BB5
+! cyan
+!urxvt*color6: #76AF92
+!urxvt*color14: #8FC3A9
+! white
+!urxvt*color7: #F8F5E2 
+!urxvt*color15: #D3C2A9
+! -------------------------------------------------
+
+! -------------------------------------------------
+! not mine - http://dotshare.it/dots/897/
 !black
-urxvt*color0: #443236
-urxvt*color8: #695F6C
+!urxvt*color0:  #333333
+!urxvt*color8:  #3D3D3D
 !red
-urxvt*color1: #BE7765 
-urxvt*color9: #D2998B
+!urxvt*color1:  #8C4665
+!urxvt*color9:  #BF4D80
 !green
-urxvt*color2: #96BE65 
-urxvt*color10: #A5C085
+!urxvt*color2:  #287373
+!urxvt*color10: #53A6A6
 !yellow
-urxvt*color3: #FCD384 
-urxvt*color11: #FADEA7
+!urxvt*color3:  #7C7C99
+!urxvt*color11: #9E9ECB
 !blue
-urxvt*color4: #9FB5C2
-urxvt*color12: #CED7D2
+!urxvt*color4:  #395573
+!urxvt*color12: #477AB3
 !magenta
-urxvt*color5: #9B7E9B 
-urxvt*color13: #B58BB5
+!urxvt*color5:  #5E468C
+!urxvt*color13: #7E62B3
 !cyan
-urxvt*color6: #76AF92
-urxvt*color14: #8FC3A9
+!urxvt*color6:  #31658C
+!urxvt*color14: #6096BF
 !white
-urxvt*color7: #F8F5E2 
-urxvt*color15: #D3C2A9
-! #####################################################
+!urxvt*color7:  #899CA1
+!urxvt*color15: #C0C0C0
+! -------------------------------------------------
+
+! -------------------------------------------------
+! dogdragon - http://dotshare.it/dots/531/
+urxvt*background:    #000000
+urxvt*foreground:    #e0c8a3
+urxvt*cursorColor:                    #b3b3b3
+urxvt*cursorColor2:                   #ffffff
+! Black
+urxvt*color0:	#100b24
+urxvt*color8:	#4f3d52
+! Red
+urxvt*color1:	#cc2949
+urxvt*color9:	#ff7575
+! Green
+urxvt*color2:	#452f80
+urxvt*color10:	#98f065
+! Yellow
+urxvt*color3:	#c2694e
+urxvt*color11:	#ffd285
+! Blue
+urxvt*color4:	#94515a
+urxvt.color12:	#e3a18d
+! Magenta
+urxvt*color5:	#6c398a
+urxvt*color13:	#b691c4
+! Cyan
+urxvt*color6:	#3d6cb3
+urxvt*color14:	#9af8f6
+! White
+urxvt*color7:	#b3b3b3
+urxvt*color15:	#ffffff
+! -------------------------------------------------
 
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
