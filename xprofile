@@ -10,6 +10,6 @@ export EDITOR=vim
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
 # own scripts path
-export PATH=$PATH:~/CloudStation/Linux/scripts
+export PATH=$PATH:~/CloudStation/Linux/linuxhelper
 
 

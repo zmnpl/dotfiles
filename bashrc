@@ -7,7 +7,7 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 
 # own scripts path
-export PATH=$PATH:~/CloudStation/Linux/scripts
+export PATH=$PATH:~/CloudStation/Linux/linuxhelper
 
 #set prompt
 #PS1='`pwd` >'
