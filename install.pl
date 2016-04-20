@@ -62,14 +62,11 @@ cloneVimPlugin('https://github.com/fatih/vim-go.git', $gitNormal);
 # zsh - prezto
 #
 # settings
-my $preztodir = $dotfolder."zprezto/";
-# zsh/prezto dotfiles
-push(@dotfiles, $preztodir);
-
-gitCloneOrPull("https://github.com/zmnpl/prezto.git", $preztodir, $gitRecursive);
-
+my $preztodir = $home.".zprezto/";
+# clone preto from sorin
+gitCloneOrPull("https://github.com/sorin-ionescu/prezto.git", $preztodir, $gitRecursive);
 # push all prezto configs to @dotfiles
-foreach(glob($preztodir."runcoms/z*")) {
+foreach(glob($dotfolder."zprezto/"."runcoms/z*")) {
 	push(@dotfiles, $_)
 }
 
