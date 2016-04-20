@@ -57,26 +57,3 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-" vim startup size
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window (for an alternative on Windows, see simalt below).
-  " set lines=999 columns=999
-else
-  " This is console Vim.
-  if exists("+lines")
-    " set lines=60
-  endif
-  if exists("+columns")
-    " set columns=180
-  endif
-endif
-
-" set font
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Source\ Code\ Pro\ Light\ 12
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
-endif
