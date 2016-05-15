@@ -10,7 +10,10 @@ URxvt.depth: 32
 URxvt.scrollBar: false
 URxvt.font: xft:Source Code Pro:size=13
 URxvt.geometry: 140x42
-!-------------------------------------------------------------------------------
+!URxvt*transparent: true
+!URxvt*shading: 10
+
+-------------------------------------------------------------------------------
 ! Colors
 !URxvt.background: #181818
 !URxvt.foreground: #c0c0c0

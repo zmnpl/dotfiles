@@ -91,7 +91,7 @@ sub gitCloneOrPull() {
 	my $dir = getcwd;
 
 	say($printspacer);
-	# decide if git with submodules or without
+	# decide if giwgetsubmodules or without
 	# checks, if destination already exists; if so updates instead of pulling
 	if ($mode eq $gitNormal){
 		if (! -d $destination) {
@@ -148,7 +148,7 @@ sub dotLink() {
 	}
 }
 
-# downloads file with gestore and replaces old one
+# downloads file with wget and replaces old one
 sub updateViaWget() {
 	my $url = shift;
 	my $file = shift;
@@ -160,10 +160,4 @@ sub updateViaWget() {
 		unlink($file)
 	}
 	move($file."~", $file)
-
-	#my $status = getstore($url, $file."~");
-	#if (is_success($status) && -f $file."~") {
-	#	unlink($file);
-	#	move($file."~", $file);
-	#}
 }
