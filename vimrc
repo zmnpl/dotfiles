@@ -2,7 +2,8 @@
 syntax on
 set t_Co=256
 set background=dark
-colorscheme pride
+"colorscheme pride
+colorscheme Brogrammer
 
 set number
 set encoding=utf-8

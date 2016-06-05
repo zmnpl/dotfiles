@@ -52,7 +52,7 @@ export EDITOR=vim
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
 # own scripts path
-export PATH=$PATH:~/CloudStation/Linux/linuxhelper
+export PATH=$PATH:~/CloudStation/Linux/scripts
 
 # pico-8
 export PATH=$PATH:~/CloudStation/Linux/pico-8
@@ -71,11 +71,15 @@ alias aurupdate='yaourt -Syua --devel'
 # urxvt
 alias urxvtoptions="urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'"
 # steam temporary
-alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
+#alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
 
 # ssh aliases
 source ~/CloudStation/Linux/ssh_alias.zsh
 
-#/home/simon/CloudStation/Linux_Setup/scripts/bash_pacman.sh
+# git aliases
+alias "git-lg"="git log --oneline"
+
+# keychain
+alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
+
 screenfetch
-#fortune -a
