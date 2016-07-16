@@ -57,6 +57,10 @@ export PATH=$PATH:~/CloudStation/Linux/scripts
 # pico-8
 export PATH=$PATH:~/CloudStation/Linux/pico-8
 
+# general stuff
+alias cp='cp -v'
+alias rm='rm -v'
+
 # alias xflock4='light-locker-command -l'
 alias xflock4='sxlock'
 alias whatsinaur='pacman -Qqm'
@@ -66,11 +70,9 @@ alias fuckoff='sudo shutdown -h now'
 alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
 # pacman aliases
 alias kick='sudo pacman -Rns'
-# yaourt aliases
-alias aurupdate='yaourt -Syua --devel'
 # urxvt
 alias urxvtoptions="urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'"
-# steam temporary
+# steam temporary after nvidia driver bug
 #alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
 
 # ssh aliases
