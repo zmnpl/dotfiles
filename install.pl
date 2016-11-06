@@ -44,7 +44,7 @@ push(@dotfiles, $dotfolder."vimrc");
 
 # pathogen
 if (! -d $vimdir."/bundle/") {
-	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."/autoload/: $!");
+	make_path($vimdir."/bundle/") || say("could not create ".$vimdir."/bundle/: $!");
 }
 if (! -d $vimdir."/autoload/") {
 	make_path($vimdir."/autoload/") || say("could not create ".$vimdir."/autoload/: $!");
@@ -67,7 +67,7 @@ my $preztodir = $home.".zprezto/";
 gitCloneOrPull("https://github.com/sorin-ionescu/prezto.git", $preztodir, $gitRecursive);
 # push all prezto configs to @dotfiles
 foreach(glob($dotfolder."zprezto/"."runcoms/z*")) {
-	push(@dotfiles, $_)
+	push(@dotfiles, $_)https://github.com/sorin-ionescu/prezto.git
 }
 
 ##########################################################
