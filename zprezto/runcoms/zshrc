@@ -48,6 +48,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 
+# cdpath
+export CDPATH=".:~:~/go/src/github.com/zmnpl"
+
 # android sdk
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
@@ -60,6 +63,9 @@ export PATH=$PATH:~/CloudStation/Linux/pico-8
 # general stuff
 alias cp='cp -v'
 alias rm='rm -v'
+
+# neovim
+alias vim='nvim'
 
 # alias xflock4='light-locker-command -l'
 alias xflock4='sxlock'
