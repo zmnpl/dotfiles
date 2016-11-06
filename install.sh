@@ -1,5 +1,8 @@
 #!/usr/bin/sh
 
+# backup folder
+mkdir -v ~/dotfiles/backup
+
 # vim
 echo "########## vim"
 ln -sf ~/dotfiles/vim ~/.vim

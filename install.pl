@@ -27,20 +27,23 @@ my $printspacer = "#######################################################";
 my $home = glob("~/");
 my $dotfolder = $home."dotfiles/";
 my $oldfiles = $dotfolder."backup/";
-my @dotfiles; # push all dotfiles in here
 
 chdir $dotfolder;
-push(@dotfiles, $dotfolder."bashrc");
-push(@dotfiles, $dotfolder."xprofile");
-push(@dotfiles, $dotfolder."Xresources");
+
+&dotLink($dotfolder."bashrc", $home.".bashrc");
+&dotLink($dotfolder."xprofile", $home.".xprofile");
+&dotLink($dotfolder."Xresources", $home.".Xresources");
 ##########################################################
 # vim
 #
 # settings
 my $vimdir = $dotfolder."vim/";
 # vim dotfiles
-push(@dotfiles, $vimdir);
-push(@dotfiles, $dotfolder."vimrc");
+&dotLink($dotfolder."vim", $home."vim");
+&dotLink($dotfolder."vimrc", $home.".vimrc");
+# neovim
+&dotLink($vimdir, $home.".config/nvim");
+&dotLink($dotfolder."vimrc", $home.".config/nvim/init.vim");
 
 # pathogen
 if (! -d $vimdir."/bundle/") {
@@ -51,6 +54,7 @@ if (! -d $vimdir."/autoload/") {
 }
 updateViaWget('https://tpo.pe/pathogen.vim', 'vim/autoload/pathogen.vim');
 
+# vim plugins
 cloneVimPlugin('https://github.com/Shougo/neocomplete.vim.git', $gitNormal);
 cloneVimPlugin('https://github.com/scrooloose/nerdtree.git', $gitNormal);
 cloneVimPlugin('https://github.com/majutsushi/tagbar.git', $gitNormal);
@@ -61,21 +65,11 @@ cloneVimPlugin('https://github.com/fatih/vim-go.git', $gitNormal);
 ##########################################################
 # zsh - prezto
 #
-# settings
-my $preztodir = $home.".zprezto/";
 # clone preto from sorin
-gitCloneOrPull("https://github.com/sorin-ionescu/prezto.git", $preztodir, $gitRecursive);
-# push all prezto configs to @dotfiles
+gitCloneOrPull("https://github.com/sorin-ionescu/prezto.git", $home.".zprezto/", $gitRecursive);
+# link all configs
 foreach(glob($dotfolder."zprezto/"."runcoms/z*")) {
-	push(@dotfiles, $_)https://github.com/sorin-ionescu/prezto.git
-}
-
-##########################################################
-# linking - actual installation
-#
-#settings
-foreach(@dotfiles) {
-	&dotLink($home, $_);
+	&dotLink($_, $home.".".basename($_));
 }
 
 #########################################################################################
@@ -129,22 +123,21 @@ sub cloneVimPlugin() {
 # creates .dotfile link in given destination
 # saves copy in backup folder, if it was an actual file and not a symlink
 sub dotLink() {
-	my $destination = shift;
 	my $dotfile = shift;
-	$destination = $destination.".".basename($dotfile);
+	my $link = shift;
 
-	if(-l $destination) {
-		unlink $destination # symlinks will be removed anyways; nothing to backup here ...
-	} elsif (-f $destination || -d $destination) {
-		say("backing up $destination");
-		move($destination, $oldfiles.time().basename($dotfile)) || die "could not backup $destination: $!" # timestamp in filename to avoid overwriting
+	if(-l $link) {
+		unlink $link # symlinks will be removed anyways; nothing to backup here ...
+	} elsif (-f $link || -d $link) {
+		say("backing up $link");
+		move($link, $oldfiles.time().basename($dotfile)) || die "could not backup $link: $!" # timestamp in filename to avoid overwriting
 	}
 
-	my $linked = eval { symlink($dotfile, $destination); 1 };
+	my $linked = eval { symlink($dotfile, $link); 1 };
 	if($linked) {
-		say("created symlink: $dotfile -> $destination")
+		say("created symlink: $dotfile -> $link")
 	} else {
-		say("could not create symlink: $dotfile -> $destination\n$!")
+		say("could not create symlink: $dotfile -> $link\n$!")
 	}
 }
 
