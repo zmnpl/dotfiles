@@ -94,4 +94,7 @@ alias "git-graph"="git log --graph"
 # keychain
 alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
 
+# close crypt drives
+alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
+
 screenfetch

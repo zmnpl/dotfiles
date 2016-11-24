@@ -8,7 +8,9 @@ Xft.rgba: rgb
 
 URxvt.depth: 32
 URxvt.scrollBar: false
-URxvt.font: xft:Source Code Pro:size=13
+!URxvt.font: xft:Source Code Pro:size=13
+!URxvt.font: xft:Go Mono:size=13
+URxvt.font: xft:Hack:size=13
 URxvt.geometry: 140x42
 !URxvt*transparent: true
 !URxvt*shading: 10
