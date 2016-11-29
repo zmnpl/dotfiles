@@ -106,7 +106,7 @@ sub gitCloneOrPull() {
 			chdir $destination;
 			system("git", "pull");
 			system("git", "submodule", "foreach", "--recursive", "git", "pull", "origin", "master");
-			system("git", "pull", "&&", "git", "submodule", "update", "--init", "--recursive")
+			system("git", "pull", "&&", "git", "submodule", "update", "--init", "--recursive");
 			chdir $dir;
 		}
 	}
