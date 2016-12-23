@@ -49,7 +49,7 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 
 # cdpath
-export CDPATH=".:~:~/go/src/github.com/zmnpl"
+export CDPATH=".:~:~/go/src/github.com/zmnpl:~/CloudStation"
 
 # android sdk
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
