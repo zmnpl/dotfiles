@@ -8,16 +8,23 @@ echo "########## vim"
 ln -sf ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 
+# neovim
+~/dotfiles/vim ~/.config/nvim
+~/dotfiles/vimrc ~/.config/nvim/init.vim
+
 # vim pathogen
 echo "########## vim"
 mkdir ~/dotfiles/vim/bundle
 mkdir ~/dotfiles/vim/autoload
 
+# download pathogen to temp file ~
 wget -O ~/dotfiles/vim/autoload/pathogen.vim~ https://tpo.pe/pathogen.vim
+# delete olt pathogen
 if [ -e "~/dotfiles/vim/autoload/pathogen.vim" ]
 then
   rm -v "~/dotfiles/vim/autoload/pathogen.vim"
 fi
+# activate just downloaded pathogen version
 mv -v ~/dotfiles/vim/autoload/pathogen.vim~ ~/dotfiles/vim/autoload/pathogen.vim
 
 # vim plugins
