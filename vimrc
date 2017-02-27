@@ -39,8 +39,12 @@ execute pathogen#infect()
 " activate airline status bar plugin
 set laststatus=2
 
-" neocomplete plugin
-let g:neocomplete#enable_at_startup = 1
+if has('nvim')
+	" completion for neovim
+else
+	" neocomplete plugin
+	let g:neocomplete#enable_at_startup = 1
+endif
 
 " nerd tree
 autocmd StdinReadPre * let s:std_in=1
