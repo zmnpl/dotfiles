@@ -1,8 +1,8 @@
 " syntax higlighting always on
 syntax on
 set t_Co=256
-set background=dark
-colorscheme shiny-white
+"set background=dark
+colorscheme smyck
 
 set number
 set encoding=utf-8

@@ -1,0 +1,75 @@
+[global_config]
+  putty_paste_style = True
+  smart_copy = False
+  title_inactive_bg_color = "#f3f3f3"
+  title_inactive_fg_color = "#888a85"
+  title_receive_bg_color = "#2e3436"
+  title_receive_fg_color = "#ff7575"
+  title_transmit_bg_color = "#ffffff"
+  title_transmit_fg_color = "#2e3436"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 30eea985-5108-40f8-b5b7-e6223d7f9ace
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 1920:0
+      size = 1680, 1026
+      title = /usr/bin/zsh
+      type = Window
+    [[[terminal1]]]
+      directory = ""
+      order = 0
+      parent = child0
+      profile = mydefault
+      type = Terminal
+      uuid = 30eea985-5108-40f8-b5b7-e6223d7f9ace
+  [[system_monitor]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 30eea985-5108-40f8-b5b7-e6223d7f9ace
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 1920:0
+      size = 1680, 1026
+      title = /usr/bin/zsh
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = mydefault
+      type = Terminal
+      uuid = 30eea985-5108-40f8-b5b7-e6223d7f9ace
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    cursor_color = "#aaaaaa"
+    font = Droid Sans Mono 12
+    foreground_color = "#ffffff"
+    scrollback_lines = 1000
+    show_titlebar = False
+    use_system_font = False
+  [[foo]]
+    allow_bold = False
+    cursor_color = "#aaaaaa"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+  [[mydefault]]
+    cursor_color = "#aaaaaa"
+    font = Source Code Pro 13
+    show_titlebar = False
+    use_system_font = False
+  [[smyck]]
+    background_color = "#C75646"
+    foreground_color = "#F7F7F7"
+    palette = "#000000:#C75646:#8EB33B:#D0B03C:#4E90A7:#C8A0D1:#218693:#B0B0B0:#5D5D5D:#E09690:#CDEE69:#FFE377:#9CD9F0:#FBB1F9:#77DFD8:#F7F7F7"
+    cursor_color = "#aaaaaa"
+    font = Source Code Pro 13
+    show_titlebar = False
+    use_system_font = False

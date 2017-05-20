@@ -9,11 +9,12 @@ ln -sf ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 
 # neovim
-~/dotfiles/vim ~/.config/nvim
-~/dotfiles/vimrc ~/.config/nvim/init.vim
+echo "########## nvim"
+ln -sf ~/dotfiles/vim ~/.config/nvim
+ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
 
 # vim pathogen
-echo "########## vim"
+echo "########## pathogen"
 mkdir ~/dotfiles/vim/bundle
 mkdir ~/dotfiles/vim/autoload
 
@@ -81,6 +82,18 @@ then
 else
     git clone https://github.com/fatih/vim-go.git ~/dotfiles/vim/bundle/vim-go
 fi
+
+# terminator
+echo "########## terminator"
+if [ -L ~/.config/terminator ]
+then
+    rm ~/.config/terminator
+elif [ -e ~/.config/terminator ]
+then
+	echo "backup existing terminator config"
+	mv ~/.config/terminator ~/dotfiles/backup
+fi
+ln -sf ~/dotfiles/terminator ~/.config/terminator
 
 # sorin zprezto
 echo "########## zprezto"

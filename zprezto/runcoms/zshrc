@@ -64,9 +64,6 @@ export PATH=$PATH:~/CloudStation/Linux/pico-8
 alias cp='cp -v'
 alias rm='rm -v'
 
-# neovim
-alias vim='nvim'
-
 # alias xflock4='light-locker-command -l'
 alias xflock4='sxlock'
 alias whatsinaur='pacman -Qqm'
