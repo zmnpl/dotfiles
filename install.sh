@@ -18,70 +18,30 @@ echo "########## pathogen"
 mkdir ~/dotfiles/vim/bundle
 mkdir ~/dotfiles/vim/autoload
 
-# download pathogen to temp file ~
-wget -O ~/dotfiles/vim/autoload/pathogen.vim~ https://tpo.pe/pathogen.vim
-# delete olt pathogen
-if [ -e "~/dotfiles/vim/autoload/pathogen.vim" ]
-then
-  rm -v "~/dotfiles/vim/autoload/pathogen.vim"
-fi
-# activate just downloaded pathogen version
-mv -v ~/dotfiles/vim/autoload/pathogen.vim~ ~/dotfiles/vim/autoload/pathogen.vim
+# download pathogen to temp file ~, activate o
+rm -v "~/dotfiles/vim/autoload/pathogen.vim"
+wget -O ~/dotfiles/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # vim plugins
 echo "########## neocomplete"
-if [ -e ~/dotfiles/vim/bundle/neocomplete.vim ]
-then
-    cd ~/dotfiles/vim/bundle/neocomplete.vim
-    git pull
-else
-    git clone https://github.com/Shougo/neocomplete.vim.git ~/dotfiles/vim/bundle/neocomplete.vim
-fi
-
+git clone https://github.com/Shougo/neocomplete.vim.git ~/dotfiles/vim/bundle/neocomplete.vim
 echo "########## nerdtree"
-if [ -e ~/dotfiles/vim/bundle/nerdtree ]
-then
-    cd ~/dotfiles/vim/bundle/nerdtree
-    git pull
-else
-    git clone https://github.com/scrooloose/nerdtree.git ~/dotfiles/vim/bundle/nerdtree
-fi
-
+git clone https://github.com/scrooloose/nerdtree.git ~/dotfiles/vim/bundle/nerdtree
 echo "########## tagbar"
-if [ -e ~/dotfiles/vim/bundle/tagbar ]
-then
-    cd ~/dotfiles/vim/bundle/tagbar
-    git pull
-else
-    git clone https://github.com/majutsushi/tagbar.git ~/dotfiles/vim/bundle/tagbar
-fi
-
+git clone https://github.com/majutsushi/tagbar.git ~/dotfiles/vim/bundle/tagbar
 echo "########## vim-airline"
-if [ -e ~/dotfiles/vim/bundle/vim-airline ]
-then
-    cd ~/dotfiles/vim/bundle/vim-airline
-    git pull
-else
-    git clone https://github.com/bling/vim-airline.git ~/dotfiles/vim/bundle/vim-airline
-fi
-
+git clone https://github.com/bling/vim-airline.git ~/dotfiles/vim/bundle/vim-airline
 echo "########## vim-better-whitespace"
-if [ -e ~/dotfiles/vim/bundle/vim-better-whitespace ]
-then
-    cd ~/dotfiles/vim/bundle/vim-better-whitespace
-    git pull
-else
-    git clone https://github.com/ntpeters/vim-better-whitespace.git ~/dotfiles/vim/bundle/vim-better-whitespace
-fi
-
+git clone https://github.com/ntpeters/vim-better-whitespace.git ~/dotfiles/vim/bundle/vim-better-whitespace
 echo "########## vim go"
-if [ -e ~/dotfiles/vim/bundle/vim-go ]
-then
-    cd ~/dotfiles/vim/bundle/vim-go
-    git pull
-else
-    git clone https://github.com/fatih/vim-go.git ~/dotfiles/vim/bundle/vim-go
-fi
+git clone https://github.com/fatih/vim-go.git ~/dotfiles/vim/bundle/vim-go
+echo "########## update all vim plugins"
+cd ~/dotfiles/vim/bundle
+for i in `ls`; do
+  cd "$i"
+  git pull
+  cd ..
+done
 
 # terminator
 echo "########## terminator"

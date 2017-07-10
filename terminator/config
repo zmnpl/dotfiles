@@ -60,15 +60,7 @@
     allow_bold = False
     cursor_color = "#aaaaaa"
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
-  [[mydefault]]
-    cursor_color = "#aaaaaa"
-    font = Source Code Pro 13
-    show_titlebar = False
-    use_system_font = False
   [[smyck]]
-    background_color = "#C75646"
-    foreground_color = "#F7F7F7"
-    palette = "#000000:#C75646:#8EB33B:#D0B03C:#4E90A7:#C8A0D1:#218693:#B0B0B0:#5D5D5D:#E09690:#CDEE69:#FFE377:#9CD9F0:#FBB1F9:#77DFD8:#F7F7F7"
     cursor_color = "#aaaaaa"
     font = Source Code Pro 13
     show_titlebar = False
