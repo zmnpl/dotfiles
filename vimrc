@@ -2,7 +2,7 @@
 syntax on
 set t_Co=256
 "set background=dark
-colorscheme smyck
+colorscheme vice
 
 set number
 set encoding=utf-8
