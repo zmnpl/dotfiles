@@ -42,6 +42,10 @@ for i in ~/dotfiles/vim/bundle/*; do git -C $i pull; done
 echo "########## terminator"
 ln -sf ~/dotfiles/terminator ~/.config/terminator
 
+# i3
+echo "########## i3"
+ln -sf ~/dotfiles/i3 ~/.config/i3
+
 # sorin zprezto
 echo "########## zprezto"
 if [ -e ~/.zprezto ]
