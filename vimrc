@@ -55,9 +55,17 @@ map <F4> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " vim-go settings
-let g:go_highlight_functions = 0
-let g:go_highlight_methods = 0
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+" highlight same variable
+let g:go_auto_sameids = 1
+" auto import with go fmt
+let g:go_fmt_command = "goimports"
+" show types
+let g:go_auto_type_info = 1
