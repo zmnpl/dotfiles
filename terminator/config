@@ -58,6 +58,7 @@
     show_titlebar = False
     use_system_font = False
   [[colorfulcolors]]
+    background_color = "#000000"
     cursor_color = "#ffffff"
     font = Source Code Pro 13
     foreground_color = "#ffffff"
