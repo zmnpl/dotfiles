@@ -9,6 +9,7 @@ fi
 
 # vim
 echo "########## vim"
+rm -rf ~/.vim
 ln -sf ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 # neovim
@@ -40,10 +41,12 @@ for i in ~/dotfiles/vim/bundle/*; do git -C $i pull; done
 
 # terminator
 echo "########## terminator"
+rm -rf ~/.config/terminator
 ln -sf ~/dotfiles/terminator ~/.config/terminator
 
 # i3
 echo "########## i3"
+rm -rf ~/.config/i3
 ln -sf ~/dotfiles/i3 ~/.config/i3
 
 # Xresources
