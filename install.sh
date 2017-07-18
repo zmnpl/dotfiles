@@ -14,6 +14,7 @@ ln -sf ~/dotfiles/vim ~/.vim
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 # neovim
 echo "########## nvim"
+rm -rfv ~/.config/nvim
 ln -sf ~/dotfiles/vim ~/.config/nvim
 ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
 # vim pathogen
