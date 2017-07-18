@@ -46,6 +46,10 @@ ln -sf ~/dotfiles/terminator ~/.config/terminator
 echo "########## i3"
 ln -sf ~/dotfiles/i3 ~/.config/i3
 
+# Xresources
+echo "########## Xresources"
+ln -sf ~/dotfiles/Xresources ~/.Xresources
+
 # sorin zprezto
 echo "########## zprezto"
 if [ -e ~/.zprezto ]
