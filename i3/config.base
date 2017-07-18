@@ -210,7 +210,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command i3blocks
         # custom - marker for j4-make-config
         # $i3-theme-bar
 }
@@ -219,3 +220,6 @@ bar {
 set $TERMINAL="terminator"
 exec_always feh --bg-scale /home/simon/Bilder/wplaptop.jpg
 exec_always compton -f
+
+# custom - start on startup
+#exec --no-startup-id dropbox start
