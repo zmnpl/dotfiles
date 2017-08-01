@@ -221,7 +221,7 @@ bar {
 }
 
 # custom - commands
-set $TERMINAL="terminator"
+set $TERMINAL="tilix"
 exec_always feh --bg-scale /home/simon/Bilder/wplaptop.jpg
 exec_always compton -f
 

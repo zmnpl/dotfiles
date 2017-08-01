@@ -24,12 +24,16 @@ set $text-color "#ffffff"
 #client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
 
 # custom - marker for j4-make-config
+new_window normal 0
 # class                 border  backgr. text    indicator
-client.focused          #0088CC #0088CC #ffffff #dddddd
-#client.focused_inactive #0C2D3C #0C2D3C #888888 #484e50 # I don't like it that way
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused        #333333 #333333 #888888 #292d2e
+client.focused          #808090 #606070 #C0C0C5 #2e9ef4
+client.focused_inactive #5F5F6F #303040 #707075 #484e50
+client.unfocused        #5F5F5F #303030 #808080 #292d2e
+# alternative colouring - the other way round
+#client.focused_inactive #5F5F5F #303030 #808080 #292d2e
+#client.unfocused        #5F5F6F #303040 #707075 #484e50
 client.urgent           #2f343a #900000 #ffffff #900000
+
 
 # i3 config file (v4)
 #
@@ -223,17 +227,20 @@ bar {
         status_command i3blocks
         # custom - marker for j4-make-config
 colors {
-	background #222222
-	statusline #dddddd
+	background #000000
+	statusline #ffffff
 	separator #666666
-	focused_workspace #0088CC #0088CC #ffffff
-	active_workspace #333333 #333333 #888888
-	inactive_workspace #333333 #333333 #888888
-	urgent_workspace   #2f343a #900000 #ffffff
+	focused_workspace #808090 #606070 #C0C0C5
+	active_workspace #5F5F5F #303030 #808080
+	inactive_workspace #5F5F5F #303030 #808080
+	urgent_workspace #2f343a #900000 #ffffff
 }
 }
 
 # custom - commands
-set $TERMINAL="terminator"
+set $TERMINAL="tilix"
 exec_always feh --bg-scale /home/simon/Bilder/wplaptop.jpg
 exec_always compton -f
+
+# custom - start on startup
+#exec --no-startup-id dropbox start
