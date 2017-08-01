@@ -49,7 +49,7 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 
 # cdpath
-export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:~/CloudStation/"
+export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/CloudStation/"
 
 # android sdk
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
@@ -93,5 +93,10 @@ alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
 
 # close crypt drives
 alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
+
+# tilix fix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
 
 screenfetch

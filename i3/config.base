@@ -55,7 +55,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -168,11 +168,15 @@ assign [class="Subl3"] $work2
 assign [class="Code"] $work2
 assign [class="code"] $work2
 assign [class="Terminator"] $work3
+assign [class="urxvt"] $work3
+assign [class="URxvt"] $work3
 assign [class="sun-awt-X11-XFramePeer"] $work4
 assign [class="jetbrains-studio"] $work4
-assign [class="Spotify"] $work10
+assign [class="pencil"] $work5
+assign [class="Pencil"] $work5
 assign [class="spotify"] $work10
-
+assign [class="Spotify"] $work10
+for_window [class="Spotify"] move to workspace $work10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

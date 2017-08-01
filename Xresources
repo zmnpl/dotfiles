@@ -1,16 +1,21 @@
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
+Xft.autohint: false
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: true
+Xft.antialias: true
 Xft.rgba: rgb
+Xft.dpi: 82
 !Xft.rgba: none
 
 URxvt.depth: 32
 URxvt.scrollBar: false
-URxvt.font: xft:Source Code Pro:size=13
+!URxvt.font: xft:Source Code Pro:size=13
+!URxvt.boldFont: xft:Source Code Pro:style=Bold,size=13
 !URxvt.font: xft:Go Mono:size=13
 !URxvt.font: xft:Hack:size=13
+!URxvt.boldFont: xft:Hack Bold:size=13
+URxvt.font: xft:Iosevka:size=13
+URxvt.boldFont: xft:Iosevka:size=13,style=Bold
 URxvt.geometry: 140x42
 !URxvt*transparent: true
 !URxvt*shading: 10

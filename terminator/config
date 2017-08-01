@@ -51,16 +51,15 @@
   [[default]]
     background_color = "#0a0f14"
     cursor_color = "#98d1ce"
-    font = Source Code Pro 13
+    font = Iosevka 13
     foreground_color = "#98d1ce"
     palette = "#0a0f14:#c33027:#26a98b:#edb54b:#195465:#4e5165:#33859d:#98d1ce:#10151b:#d26939:#081f2d:#245361:#093748:#888ba5:#599caa:#d3ebe9"
     scrollback_lines = 1000
     show_titlebar = False
     use_system_font = False
   [[colorfulcolors]]
-    background_color = "#000000"
     cursor_color = "#ffffff"
-    font = Source Code Pro 13
+    font = Iosevka 12
     foreground_color = "#ffffff"
     palette = "#151515:#ff8eaf:#a6e25f:#f8e578:#a6e2f0:#e85b92:#5f868f:#d5f1f2:#696969:#ed4c7a:#a6e179:#ffdf6b:#79d2ff:#bb5d79:#87a8af:#e2f1f6"
     scrollback_lines = 1000
