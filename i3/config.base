@@ -228,9 +228,7 @@ bar {
 }
 
 # custom - commands
-set $TERMINAL="tilix"
-exec_always feh --bg-scale /home/simon/Bilder/wplaptop.jpg
+#set $TERMINAL="tilix"
+exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
-
-# custom - start on startup
-#exec --no-startup-id dropbox start
+exec_always pasystray
