@@ -231,4 +231,6 @@ bar {
 #set $TERMINAL="tilix"
 exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
-exec_always pasystray
+exec pasystray
+exec guake
+exec synology-cloud-station-drive

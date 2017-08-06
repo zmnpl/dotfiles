@@ -1,1 +1,1 @@
-/home/player1/dotfiles/vimrc
+/home/simon/dotfiles/vimrc

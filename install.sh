@@ -1,7 +1,10 @@
-#!/usr/bin/sh
+#!/usr/bin/zsh
 
-read -p "Are you sure? This will overwrite existing dotfiles... y/n" -n 1 -r
-echo    # (optional) move to a new line
+echo "Are you sure? This will overwrite existing dotfiles... y/n"
+REPLY=''
+vared REPLY
+#read -p "Are you sure? This will overwrite existing dotfiles... y/n" -n 1 -r
+#echo    # (optional) move to a new line
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
@@ -53,7 +56,15 @@ ln -sf ~/dotfiles/tilix ~/.config/tilix
 # i3
 echo "########## i3"
 rm -rfv ~/.config/i3
-ln -sf ~/dotfiles/i3 ~/.config/i3
+mkdir ~/.config/i3
+if [ "$HOST" = Mordor-Mobil ]; then
+    ln -sf ~/dotfiles/i3/i3blocks_laptop.conf ~/.config/i3/i3blocks.conf
+else
+    ln -sf ~/dotfiles/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
+fi
+ln -sf ~/dotfiles/i3/config.base ~/.config/i3/config.base
+#ln -sf ~/dotfiles/i3/config ~/.config/i3/config
+j4-make-config
 
 # Xresources
 echo "########## Xresources"
@@ -70,6 +81,11 @@ else
 fi
 # my zsh rc files in addition to prezto
 #setopt EXTENDED_GLOB
-for rcfile in ~/dotfiles/zprezto/runcoms/^README.md; do
-  ln -sf "$rcfile" "~/dotfiles/zprezto/runcoms/.${rcfile:t}"
+#for rcfile in ~/dotfiles/zprezto/runcoms/^README.md; do
+#  echo $rcfile
+#  ln -sf "$rcfile" "~/dotfiles/zprezto/runcoms/.${rcfile:t}"
+#done
+setopt EXTENDED_GLOB
+for rcfile in ~/dotfiles/zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done

@@ -241,9 +241,9 @@ colors {
 }
 
 # custom - commands
-set $TERMINAL="tilix"
+#set $TERMINAL="tilix"
 exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
-
-# custom - start on startup
-#exec --no-startup-id dropbox start
+exec pasystray
+exec guake
+exec synology-cloud-station-drive
