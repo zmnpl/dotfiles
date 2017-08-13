@@ -87,6 +87,8 @@ source ~/CloudStation/Linux/ssh_alias.zsh
 # git aliases
 alias "git-lg"="git log --oneline"
 alias "git-graph"="git log --graph"
+alias "gadd"="git add --all"
+alias "gommit"="git commit --m"
 
 # keychain
 alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
