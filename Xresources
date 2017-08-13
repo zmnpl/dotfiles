@@ -20,6 +20,11 @@ URxvt.geometry: 140x42
 !URxvt*transparent: true
 !URxvt*shading: 10
 
+! extensions
+URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
 -------------------------------------------------------------------------------
 ! colorful colors
 ! special
