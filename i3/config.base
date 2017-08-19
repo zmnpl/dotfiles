@@ -230,10 +230,20 @@ bar {
         $i3-theme-bar
 }
 
+# custom key binding
+# laptop
+bindcode 232 exec xbacklight -10
+bindcode 233 exec xbacklight +10
+bindcode 121 exec pulseaudio-ctl mute
+bindcode 122 exec pulseaudio-ctl down
+bindcode 123 exec pulseaudio-ctl up
+
+
 # custom - commands
 #set $TERMINAL="tilix"
 exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
+exec numlockx
 exec pasystray
 exec guake
 exec synology-cloud-station-drive
