@@ -90,6 +90,9 @@ alias "git-graph"="git log --graph"
 alias "gadd"="git add --all"
 alias "gommit"="git commit --m"
 
+# useful
+alias "listext" = "find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn"
+
 # keychain
 alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
 
