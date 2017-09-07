@@ -5,6 +5,11 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# tilix fix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -98,10 +103,5 @@ alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
 
 # close crypt drives
 alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
-
-# tilix fix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
 
 screenfetch
