@@ -22,7 +22,7 @@ URxvt.geometry: 140x42
 !URxvt*shading: 10
 
 ! extensions
-URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.perl-ext-common: default,url-select,resize-font,selection-to-clipboard
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 

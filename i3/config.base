@@ -220,12 +220,16 @@ bar {
         #status_command i3status
         #font pango:DejaVu Sans Mono 16
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        # pc
+
+		# pc
 		tray_output HDMI-0
+
 		# laptop
 		tray_output eDP1
-        #tray_output primary # xrandr --output HDMI-0 --primary
+
+		#tray_output primary # xrandr --output HDMI-0 --primary
         tray_padding 0
+
         #custom - marker for j4-make-config
         $i3-theme-bar
 }
@@ -245,5 +249,7 @@ exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
 exec numlockx
 exec pasystray
-exec guake -e "htop"
+exec guake --execute-command=htop
 exec synology-cloud-station-drive
+exec urxvtd -f
+exec start-pulseaudio-x11
