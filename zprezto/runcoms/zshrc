@@ -60,7 +60,7 @@ export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/CloudStation
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
 # own scripts path
-export PATH=$PATH:~/CloudStation/Linux/scripts
+export PATH=$PATH:~/helperscripts
 
 # pico-8
 export PATH=$PATH:~/CloudStation/Linux/pico-8
