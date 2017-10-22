@@ -222,7 +222,7 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 		# pc
-		tray_output HDMI-0
+		tray_output DP-0
 
 		# laptop
 		tray_output eDP1
