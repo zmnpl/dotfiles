@@ -37,11 +37,11 @@ set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 12
+#font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 14
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -126,16 +126,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # custom - workspace names
-set $work1 "1  web"
-set $work2 "2  edit"
-set $work3 "3  term"
-set $work4 "4  ide"
-set $work5 "5"
+set $work1 "1 .web"
+set $work2 "2 .edit"
+set $work3 "3 .term"
+set $work4 "4 .ide"
+set $work5 "5 .chat"
 set $work6 "6"
 set $work7 "7"
 set $work8 "8"
-set $work9 "9  movie"
-set $work10 "10  music"
+set $work9 "9 .movie"
+set $work10 "10 .music"
 
 # switch to workspace
 bindsym $mod+1 workspace $work1
@@ -172,9 +172,12 @@ assign [class="Terminator"] $work3
 #assign [class="URxvt"] $work3
 assign [class="sun-awt-X11-XFramePeer"] $work4
 assign [class="jetbrains-studio"] $work4
-assign [class="pencil"] $work5
-assign [class="Pencil"] $work5
-assign [class="spotify"] $work10
+#assign [class="pencil"] $work5
+#assign [class="Pencil"] $work5
+assign [class="Pidgin"] $work5
+assign [class="pidgin"] $work5
+assign [class="Gajim"] $work5
+assign [class="gajim"] $work5
 assign [class="Spotify"] $work10
 for_window [class="Spotify"] move to workspace $work10
 
