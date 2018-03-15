@@ -68,6 +68,7 @@ j4-make-config
 
 # Xresources
 echo "########## Xresources"
+rm -rfv ~/.Xresources
 ln -sf ~/dotfiles/Xresources ~/.Xresources
 
 # sorin zprezto

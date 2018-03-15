@@ -257,3 +257,4 @@ exec synology-cloud-station-drive
 exec urxvtd -f
 exec start-pulseaudio-x11
 exec nm-applet
+exec setxkbmap -layout de
