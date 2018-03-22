@@ -35,8 +35,6 @@ set $mod Mod4
 #custom - define alt
 set $alt Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 #font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -135,7 +133,7 @@ set $work6 "6"
 set $work7 "7"
 set $work8 "8"
 set $work9 "9 .movie"
-set $work10 "10 .music"
+set $work10 "10 .music"
 
 # switch to workspace
 bindsym $mod+1 workspace $work1
@@ -258,3 +256,9 @@ exec urxvtd -f
 exec start-pulseaudio-x11
 exec nm-applet
 exec setxkbmap -layout de
+
+# gaps
+gaps inner 5
+gaps outer 0
+smart_gaps on
+
