@@ -129,7 +129,7 @@ set $work2 "2 .edit"
 set $work3 "3 .term"
 set $work4 "4 .ide"
 set $work5 "5 .chat"
-set $work6 "6"
+set $work6 "6 .photo"
 set $work7 "7"
 set $work8 "8"
 set $work9 "9 .movie"
@@ -176,6 +176,11 @@ assign [class="Pidgin"] $work5
 assign [class="pidgin"] $work5
 assign [class="Gajim"] $work5
 assign [class="gajim"] $work5
+assign [class="rapid-photo-downloader"] $work6
+assign [class="Rapid-photo-downloader"] $work6
+assign [class="Rapid Photo Downloader"] $work6
+assign [class="rawtherapee"] $work6
+assign [class="Rawtherapee"] $work6
 assign [class="Spotify"] $work10
 for_window [class="Spotify"] move to workspace $work10
 
@@ -248,6 +253,7 @@ bindcode 123 exec pulseaudio-ctl up
 #set $TERMINAL="tilix"
 exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
+exec setxkbmap -layout de
 exec numlockx
 exec pasystray
 exec guake --execute-command=htop
@@ -255,7 +261,6 @@ exec synology-cloud-station-drive
 exec urxvtd -f
 exec start-pulseaudio-x11
 exec nm-applet
-exec setxkbmap -layout de
 
 # gaps
 gaps inner 5
