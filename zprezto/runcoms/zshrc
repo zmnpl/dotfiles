@@ -83,6 +83,8 @@ alias kick='sudo pacman -Rns'
 # urxvt
 alias urxvtoptions="urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'"
 
+alias feh='feh -T simondefault'
+
 # steam temporary after nvidia driver bug
 #alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
 
