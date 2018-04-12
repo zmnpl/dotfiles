@@ -53,6 +53,11 @@ echo "########## tilix"
 rm -rfv ~/.config/tilix
 ln -sf ~/dotfiles/tilix ~/.config/tilix
 
+# feh
+echo "########## feh"
+rm -rfv ~/.config/feh
+ln -sf ~/dotfiles/feh ~/.config/feh
+
 # i3
 echo "########## i3"
 rm -rfv ~/.config/i3
