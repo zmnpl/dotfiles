@@ -97,6 +97,13 @@ alias "git-graph"="git log --graph"
 alias "gadd"="git add --all"
 alias "gommit"="git commit --m"
 
+# notes find0
+function ___find_note {
+	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/CloudStation/Notes
+}
+alias "findnote"='___find_note'
+
+
 # useful
 #alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`
 
