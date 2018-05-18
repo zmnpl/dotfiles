@@ -1,11 +1,11 @@
 DELIVERED=yes
 PATH=/bin:/usr/bin
-MAILDIR=/diskstation/home/BackupMail/gmail/
-DEFAULT=/diskstation/home/BackupMail/gmail/
+MAILDIR=/home/simon/Mail/gmail/
+DEFAULT=/home/simon/Mail/gmail/
 LOGFILE=/dev/null
 SHELL=/bin/sh
 
 yearmonth=`date +%Y%m`
 
 :0 w
-.backup.$yearmonth/
+backup.$yearmonth/

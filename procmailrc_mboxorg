@@ -1,10 +1,10 @@
 DELIVERED=yes
 PATH=/bin:/usr/bin
-MAILDIR=/diskstation/home/BackupMail/mailboxorg/
-DEFAULT=/diskstation/home/BackupMail/mailboxorg/
+MAILDIR=/home/simon/Mail/mailboxorg/
+DEFAULT=/home/simon/Mail/mailboxorg/
 LOGFILE=/dev/null
 SHELL=/bin/sh
 
 yearmonth=`date +%Y%m`
 :0 w
-.backup.$yearmonth/
+backup.$yearmonth/
