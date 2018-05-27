@@ -54,7 +54,7 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 
 # cdpath
-export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/CloudStation/"
+export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/SynologyDrive/"
 
 # android sdk
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
@@ -63,7 +63,7 @@ export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 export PATH=$PATH:~/helperscripts
 
 # pico-8
-export PATH=$PATH:~/CloudStation/Linux/pico-8
+export PATH=$PATH:~/SynologyDrive/Linux/pico-8
 
 # general stuff
 #alias cp='cp -v'
@@ -89,7 +89,7 @@ alias feh='feh -T simondefault'
 #alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
 
 # ssh aliases
-source ~/CloudStation/Linux/ssh_alias.zsh
+source ~/SynologyDrive/Linux/ssh_alias.zsh
 
 # git aliases
 alias "git-lg"="git log --oneline"
@@ -99,7 +99,7 @@ alias "gommit"="git commit --m"
 
 # notes find0
 function ___find_note {
-	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/CloudStation/Notes
+	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/SynologyDrive/Notes
 }
 alias "findnote"='___find_note'
 
