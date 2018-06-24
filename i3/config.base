@@ -140,6 +140,8 @@ set $work9 "9 .movie"
 set $work10 "10 .music"
 
 # switch to workspace
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
 bindsym $mod+1 workspace $work1
 bindsym $mod+2 workspace $work2
 bindsym $mod+3 workspace $work3
@@ -241,7 +243,7 @@ bar {
         tray_padding 0
 
         #custom - marker for j4-make-config
-        $i3-theme-bar
+	# $i3-theme-bar
 }
 
 # custom key binding
@@ -258,9 +260,10 @@ bindcode 123 exec pulseaudio-ctl up
 exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
 exec setxkbmap -layout de
-exec lxsession
+#exec lxsession
+exec lxpolkit
 exec numlockx
-exec pasystray
+#exec pasystray
 exec guake --execute-command=htop
 exec synology-cloud-station-drive
 exec urxvtd -f
