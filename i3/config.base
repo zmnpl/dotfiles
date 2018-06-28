@@ -260,12 +260,12 @@ bindcode 123 exec pulseaudio-ctl up
 exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
 exec setxkbmap -layout de
-#exec lxsession
+exec lxsession
 exec lxpolkit
 exec numlockx
-#exec pasystray
+exec pasystray
 exec guake --execute-command=htop
-exec synology-cloud-station-drive
+exec synology-drive
 exec urxvtd -f
 exec start-pulseaudio-x11
 exec nm-applet
