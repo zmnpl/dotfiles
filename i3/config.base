@@ -253,6 +253,9 @@ bindcode 233 exec xbacklight +10
 bindcode 121 exec pulseaudio-ctl mute
 bindcode 122 exec pulseaudio-ctl down
 bindcode 123 exec pulseaudio-ctl up
+# bindsym $mod+Control+m exec pulseaudio-ctl mute-input
+bindcode 198 exec pulseaudio-ctl mute-input
+#bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 
 # custom - commands

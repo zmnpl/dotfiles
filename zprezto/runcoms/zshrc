@@ -68,6 +68,11 @@ export PATH=$PATH:~/SynologyDrive/Linux/pico-8
 # general stuff
 #alias cp='cp -v'
 alias rm='rm -v'
+alias grep-key-code='___grep-key-code'
+function ___grep-key-code {
+	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+alias n8='systemctl suspend'
 
 # alias xflock4='light-locker-command -l'
 alias xflock4='sxlock'
