@@ -189,6 +189,8 @@ assign [class="rawtherapee"] $work6
 assign [class="Rawtherapee"] $work6
 assign [class="Spotify"] $work10
 for_window [class="Spotify"] move to workspace $work10
+assign [class="quodlibet"] $work10
+assign [class="Quodlibet"] $work10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
