@@ -43,7 +43,7 @@ if has('nvim')
 	" completion for neovim
 else
 	" neocomplete plugin
-	let g:neocomplete#enable_at_startup = 1
+	"let g:neocomplete#enable_at_startup = 1
 endif
 
 " nerd tree
