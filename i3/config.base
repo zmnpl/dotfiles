@@ -269,7 +269,7 @@ exec lxsession
 exec numlockx
 exec pasystray
 exec guake --execute-command=htop
-exec synology-drive
+exec synology-drive autostart
 exec urxvtd -f
 exec start-pulseaudio-x11
 exec nm-applet
