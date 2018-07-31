@@ -36,6 +36,38 @@ set hlsearch
 " pathogen plugin manager
 execute pathogen#infect()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" download vim plug
+if empty(glob('~/dotfiles/vim/autoload/plug.vim'))
+  silent !curl -fLo ~/dotfiles/vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" section for vim plug
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
+
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
+else
+	call plug#begin('~/.vim/plugged')
+
+	Plug 'Shougo/deoplete.nvim'
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/vim-hug-neovim-rpc'
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
+endif
+
+call plug#end()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" enable deoplete
+let g:deoplete#enable_at_startup = 1
+
 " activate airline status bar plugin
 set laststatus=2
 

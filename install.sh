@@ -27,6 +27,8 @@ mkdir ~/dotfiles/vim/autoload
 # download pathogen to temp file ~, activate o
 rm -v "~/dotfiles/vim/autoload/pathogen.vim"
 wget -O ~/dotfiles/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+# vim plug
+curl -fLo ~/dotfiles/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # vim plugins
 echo "########## neocomplete"
 git clone https://github.com/Shougo/neocomplete.vim.git ~/dotfiles/vim/bundle/neocomplete.vim
