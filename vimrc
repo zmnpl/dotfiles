@@ -34,7 +34,7 @@ set autoindent
 set hlsearch
 
 " pathogen plugin manager
-execute pathogen#infect()
+" execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " download vim plug
@@ -53,6 +53,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'https://github.com/ntpeters/vim-better-whitespace'
+	Plug 'vim-airline/vim-airline'
+	Plug 'https://github.com/majutsushi/tagbar'
+	Plug 'https://github.com/scrooloose/nerdtree.git'
 else
 	call plug#begin('~/.vim/plugged')
 
@@ -60,6 +66,12 @@ else
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
 	Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'https://github.com/ntpeters/vim-better-whitespace'
+	Plug 'vim-airline/vim-airline'
+	Plug 'https://github.com/majutsushi/tagbar'
+	Plug 'https://github.com/scrooloose/nerdtree.git'
 endif
 
 call plug#end()
