@@ -273,6 +273,8 @@ exec synology-drive autostart
 exec urxvtd -f
 exec start-pulseaudio-x11
 exec nm-applet
+exec psensor
+exec caffeine
 
 # gaps
 gaps inner 5
