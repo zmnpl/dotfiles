@@ -267,10 +267,10 @@ exec_always compton -f
 exec setxkbmap -layout de
 exec lxsession
 exec numlockx
-exec pasystray
-exec guake --execute-command=htop
+#exec guake --execute-command=htop
 exec synology-drive autostart
-exec urxvtd -f
+#exec urxvtd -f
+exec pasystray
 exec start-pulseaudio-x11
 exec nm-applet
 exec psensor
