@@ -128,16 +128,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # custom - workspace names
-set $work1 "1 .web"
-set $work2 "2 .edit"
-set $work3 "3 .term"
-set $work4 "4 .ide"
-set $work5 "5 .chat"
-set $work6 "6 .photo"
+set $work1 "1  web"
+set $work2 "2  edit"
+set $work3 "3  term"
+set $work4 "4  ide"
+set $work5 "5  chat"
+set $work6 "6  photo"
 set $work7 "7"
 set $work8 "8"
-set $work9 "9 .movie"
-set $work10 "10 .music"
+set $work9 "9  movie"
+set $work10 "10  music"
 
 # switch to workspace
 bindsym $mod+Control+Right workspace next
@@ -274,7 +274,7 @@ exec pasystray
 exec start-pulseaudio-x11
 exec nm-applet
 exec psensor
-exec caffeine
+#exec caffeine
 
 # gaps
 gaps inner 5
