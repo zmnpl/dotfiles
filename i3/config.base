@@ -248,16 +248,32 @@ bar {
 	# $i3-theme-bar
 }
 
+################################################
 # custom key binding
-# laptop
+
+# laptop screen
 bindcode 232 exec xbacklight -10
 bindcode 233 exec xbacklight +10
-bindcode 121 exec pulseaudio-ctl mute
-bindcode 122 exec pulseaudio-ctl down
-bindcode 123 exec pulseaudio-ctl up
-# bindsym $mod+Control+m exec pulseaudio-ctl mute-input
-bindcode 198 exec pulseaudio-ctl mute-input
+
+# laptop audio
 #bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
+bindcode 198 exec pulseaudio-ctl mute-input
+#bindcode 121 exec pulseaudio-ctl mute
+#bindcode 122 exec pulseaudio-ctl down
+#bindcode 123 exec pulseaudio-ctl up
+bindcode 121 exec pavolume mutetoggle
+bindcode 122 exec pavolume voldown
+bindcode 123 exec pavolume volup
+
+# pc audio
+bindsym $mod+Shift+KP_Multiply exec "pulseaudio-ctl mute-input"
+#bindsym $mod+Shift+KP_Divide exec "pulseaudio-ctl mute"
+#bindsym $mod+Shift+KP_Subtract exec "pulseaudio-ctl down"
+#bindsym $mod+Shift+KP_Add exec "pulseaudio-ctl up"
+bindsym $mod+Shift+KP_Divide exec "pavolume mutetoggle"
+bindsym $mod+Shift+KP_Subtract exec "pavolume voldown"
+bindsym $mod+Shift+KP_Add exec "pavolume volup"
+################################################
 
 
 # custom - commands

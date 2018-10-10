@@ -54,7 +54,7 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 
 # cdpath
-export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/SynologyDrive/"
+export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/SynologyDrive/:/home/simon/workspace"
 
 # android sdk
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
@@ -67,36 +67,45 @@ export PATH=$PATH:~/helperscripts/backup
 export PATH=$PATH:~/SynologyDrive/Linux/pico-8
 
 # general stuff
-#alias cp='cp -v'
-alias rm='rm -v'
 alias grep-key-code='___grep-key-code'
 function ___grep-key-code {
 	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
-alias n8='systemctl suspend'
 
 # alias xflock4='light-locker-command -l'
 alias xflock4='sxlock'
-alias whatsinaur='pacman -Qqm'
-alias whatsinstalled='pacman -Qet | grep -v "^xorg" | grep -v "^xfce"'
+alias cp='cp -v'
+alias rm='rm -v'
+alias feh='feh -T simondefault'
 alias fotosnap='sudo rsnapshot -v daily'
 alias fucking-reboot='sudo shutdown -r now'
 alias fuckoff='sudo shutdown -h now'
+alias n8='systemctl suspend'
+alias fuz='fzf --preview="cat {}" --preview-window=right:70%:wrap'
+alias fuzed='vim `fuz`'
 alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
+# notes
+alias nedit=fuzed
+function note {
+	vim ~/SynologyDrive/Notes/$1.md
+}
+
+# audio
+
+# list sinks if not valid anymore
+# pacmd list-sinks | grep -e 'name:' -e 'index:'
+function pcaudio-headphones {
+	echo "set-default-sink alsa_output.usb-FiiO_DigiHug_USB_Audio-01.analog-stereo" | pacmd
+}
+function pcaudio-speakers {
+	echo "set-default-sink alsa_output.pci-0000_30_00.3.analog-stereo" | pacmd
+}
+
 
 # pacman aliases
 alias kick='sudo pacman -Rns'
-
-# urxvt
-alias urxvtoptions="urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'"
-
-alias feh='feh -T simondefault'
-
-# steam temporary after nvidia driver bug
-#alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
-
-# ssh aliases
-source ~/SynologyDrive/Linux/ssh_alias.zsh
+alias whatsinaur='pacman -Qqm'
+alias whatsinstalled='pacman -Qet | grep -v "^xorg" | grep -v "^xfce"'
 
 # git aliases
 alias "git-lg"="git log --oneline"
@@ -104,20 +113,31 @@ alias "git-graph"="git log --graph"
 alias "gadd"="git add --all"
 alias "gommit"="git commit --m"
 
-# notes find0
+# urxvt
+alias urxvtoptions="urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'"
+
+# steam temporary after nvidia driver bug
+#alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
+
+# ssh aliases
+source ~/SynologyDrive/Linux/ssh_alias.zsh
+
+# note taking
 function ___find_note {
 	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/SynologyDrive/Notes
 }
 alias "findnote"='___find_note'
 
 
-# useful
-#alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`
-
+# crypto
 # keychain
 alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
-
 # close crypt drives
 alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
 
-screenfetch
+# useful
+#alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`
+
+
+#screenfetch
+neofetch

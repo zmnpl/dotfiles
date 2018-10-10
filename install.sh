@@ -71,6 +71,11 @@ echo "########## Xresources"
 rm -rfv ~/.Xresources
 ln -sf ~/dotfiles/Xresources ~/.Xresources
 
+# Xprofile
+echo "########## Xprofile"
+rm -rfv ~/.xprofile
+ln -sf ~/dotfiles/xprofile ~/.xprofile
+
 # sorin zprezto
 echo "########## zprezto"
 if [ -e ~/.zprezto ]

@@ -10,6 +10,12 @@ export EDITOR=vim
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
 # own scripts path
-export PATH=$PATH:~/CloudStation/Linux/linuxhelper
+export PATH=$PATH:$HOME/helperscripts
 
+# gopath
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 
+# pico
+export PATH=$PATH:~/SynologyDrive/Linux/pico-8
