@@ -40,10 +40,10 @@ set $alt Mod1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 14
-#font pango:Iosevka 14
+font pango:Iosevka 16
 #font pango:Source Code Pro 14
 #font pango:Ubunt Mono 14
-font pango:Go Mono 14
+#font pango:Go Mono 15
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -236,13 +236,13 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 		# pc
-		tray_output DP-0
+		tray_output DisplayPort-0
 
 		# laptop
 		tray_output eDP1
 
 		#tray_output primary # xrandr --output HDMI-0 --primary
-        tray_padding 0
+        tray_padding 2
 
         #custom - marker for j4-make-config
 	# $i3-theme-bar
@@ -289,7 +289,7 @@ exec synology-drive autostart
 exec pasystray
 exec start-pulseaudio-x11
 exec nm-applet
-exec psensor
+#exec psensor
 #exec caffeine
 
 # gaps
