@@ -40,7 +40,7 @@ set $alt Mod1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 14
-font pango:Iosevka 16
+font pango:Iosevka 14
 #font pango:Source Code Pro 14
 #font pango:Ubunt Mono 14
 #font pango:Go Mono 15
@@ -132,7 +132,7 @@ set $work1 "1  web"
 set $work2 "2  edit"
 set $work3 "3  term"
 set $work4 "4  ide"
-set $work5 "5  chat"
+set $work5 "5  commlink"
 set $work6 "6  photo"
 set $work7 "7"
 set $work8 "8"
@@ -279,19 +279,35 @@ bindsym $mod+Shift+KP_Add exec "pavolume volup"
 
 # custom - commands
 #set $TERMINAL="tilix"
+
+# Autostart
+################################################
+
+# x ui
 exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
-exec setxkbmap -layout de
-exec lxsession
+
+# x session
+#exec lxsession
+#exec setxkbmap -layout de
 exec numlockx
+
+# applications
 #exec guake --execute-command=htop
-exec synology-drive autostart
-#exec urxvtd -f
-exec pasystray
-exec start-pulseaudio-x11
-exec nm-applet
+#exec pidgin
 #exec psensor
 #exec caffeine
+exec synology-drive autostart
+
+# system tools
+exec nm-applet
+exec pasystray
+#exec start-pulseaudio-x11
+
+# workspaces
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/i3/workspace_5.json'"
+
+################################################
 
 # gaps
 gaps inner 5
