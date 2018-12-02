@@ -242,7 +242,8 @@ colors {
 
 # custom - commands
 #set $TERMINAL="tilix"
-exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
+#exec_always feh --bg-center /home/simon/Bilder/i3wp.jpg
+exec_always feh --randomize --bg-fill /home/simon/Bilder/wallpaper/*
 exec_always compton -f
 exec pasystray
 exec cbatticon

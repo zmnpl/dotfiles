@@ -276,6 +276,8 @@ bindsym $mod+Shift+KP_Subtract exec "pavolume voldown"
 bindsym $mod+Shift+KP_Add exec "pavolume volup"
 ################################################
 
+# custom setting
+focus_follows_mouse no
 
 # custom - commands
 #set $TERMINAL="tilix"
@@ -290,18 +292,18 @@ exec_always compton -f
 # x session
 #exec lxsession
 #exec setxkbmap -layout de
-exec numlockx
+#exec numlockx
 
 # applications
 #exec guake --execute-command=htop
 #exec pidgin
 #exec psensor
 #exec caffeine
-exec synology-drive autostart
+#exec synology-drive autostart
 
 # system tools
-exec nm-applet
-exec pasystray
+#exec nm-applet
+#exec pasystray
 #exec start-pulseaudio-x11
 
 # workspaces
