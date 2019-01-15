@@ -40,7 +40,7 @@ set $alt Mod1
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 14
-font pango:Iosevka 14
+font pango:Iosevka 16
 #font pango:Source Code Pro 14
 #font pango:Ubunt Mono 14
 #font pango:Go Mono 15
@@ -130,11 +130,11 @@ bindsym $mod+a focus parent
 # custom - workspace names
 set $work1 "1  web"
 set $work2 "2  edit"
-set $work3 "3  term"
+set $work3 "3  commlink"
 set $work4 "4  ide"
-set $work5 "5  commlink"
+set $work5 "5  game"
 set $work6 "6  photo"
-set $work7 "7"
+set $work7 "7 "
 set $work8 "8"
 set $work9 "9  movie"
 set $work10 "10  music"
@@ -166,22 +166,23 @@ bindsym $mod+Shift+9 move container to workspace $work9
 bindsym $mod+Shift+0 move container to workspace $work10
 
 # custom - workspace assignments
+#assign [class="Terminator"] $work3
+#assign [class="urxvt"] $work3
+#assign [class="URxvt"] $work3
+#assign [class="pencil"] $work5
+#assign [class="Pencil"] $work5
 assign [class="Firefox"] $work1
 assign [class="Thunderbird"] $work1
 assign [class="Subl3"] $work2
 assign [class="Code"] $work2
 assign [class="code"] $work2
-assign [class="Terminator"] $work3
-#assign [class="urxvt"] $work3
-#assign [class="URxvt"] $work3
 assign [class="sun-awt-X11-XFramePeer"] $work4
 assign [class="jetbrains-studio"] $work4
-#assign [class="pencil"] $work5
-#assign [class="Pencil"] $work5
-assign [class="Pidgin"] $work5
-assign [class="pidgin"] $work5
-assign [class="Gajim"] $work5
-assign [class="gajim"] $work5
+assign [class="Pidgin"] $work3
+assign [class="pidgin"] $work3
+assign [class="Gajim"] $work3
+assign [class="gajim"] $work3
+assign [class="dolphin-emu"] $work5
 assign [class="rapid-photo-downloader"] $work6
 assign [class="Rapid-photo-downloader"] $work6
 assign [class="Rapid Photo Downloader"] $work6
@@ -290,20 +291,21 @@ exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
 exec_always compton -f
 
 # x session
-#exec lxsession
-#exec setxkbmap -layout de
-#exec numlockx
+exec lxsession
+exec setxkbmap -layout de
+exec numlockx
 
 # applications
 #exec guake --execute-command=htop
-#exec pidgin
+exec pidgin
 #exec psensor
-#exec caffeine
-#exec synology-drive autostart
+exec caffeine
+exec synology-drive autostart
 
 # system tools
-#exec nm-applet
-#exec pasystray
+exec nm-applet
+exec pasystray
+exec blueman-applet
 #exec start-pulseaudio-x11
 
 # workspaces
