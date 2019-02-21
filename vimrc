@@ -1,11 +1,10 @@
-" syntax higlighting always on
 syntax on
 set t_Co=256
-"set background=dark
+set termguicolors
 colorscheme vice
-
 set number
 set encoding=utf-8
+set autoindent
 
 " brackets
 inoremap {      {}<Left>
@@ -21,20 +20,9 @@ inoremap ()     ()
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
-" next command replaces tabstop with approriate number of spaces
-"set expandtab
-
-" show tabs with special character
-"set list
-"set listchars=tab:>-,trail:~,extends:>,precedes:<
-
-set autoindent
 
 " highlight selection
 set hlsearch
-
-" pathogen plugin manager
-" execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " download vim plug
@@ -51,6 +39,7 @@ endif
 
 if has('nvim')
 	call plug#begin('~/.local/share/nvim/plugged')
+
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'zchee/deoplete-go', { 'do': 'make'}
 
@@ -83,13 +72,6 @@ let g:deoplete#enable_at_startup = 1
 " activate airline status bar plugin
 set laststatus=2
 
-if has('nvim')
-	" completion for neovim
-else
-	" neocomplete plugin
-	"let g:neocomplete#enable_at_startup = 1
-endif
-
 " nerd tree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree ~/| endif
@@ -113,4 +95,22 @@ let g:go_auto_sameids = 1
 let g:go_fmt_command = "goimports"
 " show types
 let g:go_auto_type_info = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" maybe need later
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"set background=dark
+
+" next command replaces tabstop with approriate number of spaces
+"set expandtab
+
+" show tabs with special character
+"set list
+"set listchars=tab:>-,trail:~,extends:>,precedes:<
+
+" pathogen plugin manager
+" execute pathogen#infect()
+
 
