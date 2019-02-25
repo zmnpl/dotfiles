@@ -74,16 +74,17 @@ function ___grep-key-code {
 }
 
 # alias xflock4='light-locker-command -l'
+alias vim='nvim'
 alias xflock4='sxlock'
 alias cp='cp -v'
 alias rm='rm -v'
 alias feh='feh -T simondefault'
-alias fotosnap='sudo rsnapshot -v daily'
+#alias fotosnap='sudo rsnapshot -v daily'
 alias fucking-reboot='sudo shutdown -r now'
 alias fuckoff='sudo shutdown -h now'
 alias n8='systemctl suspend'
 alias fzf='fzf --preview="cat {}" --preview-window=right:70%:wrap'
-alias fuzzyvim='vim `fzf`'
+alias fzfvim='vim `fzf`'
 alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
 alias gotop='gotop --color=monokai --percpu'
 # notes
@@ -105,7 +106,6 @@ function pcaudio-speakers {
 
 
 # pacman aliases
-alias kick='sudo pacman -Rns'
 alias whatsinaur='pacman -Qqm'
 alias whatsinstalled='pacman -Qet | grep -v "^xorg" | grep -v "^xfce"'
 
