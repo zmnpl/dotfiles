@@ -84,11 +84,10 @@ alias fucking-reboot='sudo shutdown -r now'
 alias fuckoff='sudo shutdown -h now'
 alias n8='systemctl suspend'
 alias fzf='fzf --preview="cat {}" --preview-window=right:70%:wrap'
-alias fzfvim='vim `fzf`'
+alias fzvim='vim `fzf`'
 alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
 alias gotop='gotop --color=monokai --percpu'
 # notes
-alias nedit=fuzed
 function note {
 	vim ~/SynologyDrive/Notes/$1.md
 }
