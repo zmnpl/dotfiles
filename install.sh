@@ -21,33 +21,6 @@ rm -rfv ~/.config/nvim
 ln -sf ~/dotfiles/vim ~/.config/nvim
 ln -sf ~/dotfiles/vimrc ~/.config/nvim/init.vim
 
-# vim plugins with pathogen; right now using vim plug
-
-## vim pathogen
-#echo "########## pathogen"
-#mkdir ~/dotfiles/vim/bundle
-#mkdir ~/dotfiles/vim/autoload
-## download pathogen to temp file ~, activate o
-#rm -v "~/dotfiles/vim/autoload/pathogen.vim"
-#wget -O ~/dotfiles/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-## vim plug
-#curl -fLo ~/dotfiles/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-## vim plugins
-#echo "########## neocomplete"
-#git clone https://github.com/Shougo/neocomplete.vim.git ~/dotfiles/vim/bundle/neocomplete.vim
-#echo "########## nerdtree"
-#git clone https://github.com/scrooloose/nerdtree.git ~/dotfiles/vim/bundle/nerdtree
-#echo "########## tagbar"
-#git clone https://github.com/majutsushi/tagbar.git ~/dotfiles/vim/bundle/tagbar
-#echo "########## vim-airline"
-#git clone https://github.com/bling/vim-airline.git ~/dotfiles/vim/bundle/vim-airline
-#echo "########## vim-better-whitespace"
-#git clone https://github.com/ntpeters/vim-better-whitespace.git ~/dotfiles/vim/bundle/vim-better-whitespace
-#echo "########## vim go"
-#git clone https://github.com/fatih/vim-go.git ~/dotfiles/vim/bundle/vim-go
-#echo "########## update all vim plugins"
-#for i in ~/dotfiles/vim/bundle/*; do git -C $i pull; done
-
 # feh
 echo "########## feh"
 rm -rfv ~/.config/feh

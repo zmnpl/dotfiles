@@ -1,7 +1,8 @@
 syntax on
-set t_Co=256
+" set t_Co=256
 set termguicolors
-colorscheme vice
+"colorscheme vice
+colorscheme dracula
 set number
 set encoding=utf-8
 set autoindent
@@ -45,9 +46,15 @@ if has('nvim')
 
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'https://github.com/ntpeters/vim-better-whitespace'
-	Plug 'vim-airline/vim-airline'
 	Plug 'https://github.com/majutsushi/tagbar'
-	Plug 'https://github.com/scrooloose/nerdtree.git'
+
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'https://github.com/tpope/vim-fugitive'
+
+	Plug 'vim-syntastic/syntastic'
+
+	" Plug 'https://github.com/scrooloose/nerdtree.git'
 else
 	call plug#begin('~/.vim/plugged')
 
@@ -60,7 +67,12 @@ else
 	Plug 'https://github.com/ntpeters/vim-better-whitespace'
 	Plug 'vim-airline/vim-airline'
 	Plug 'https://github.com/majutsushi/tagbar'
-	Plug 'https://github.com/scrooloose/nerdtree.git'
+
+	Plug 'vim-syntastic/syntastic'
+
+	Plug 'https://github.com/tpope/vim-fugitive'
+
+	" Plug 'https://github.com/scrooloose/nerdtree.git'
 endif
 
 call plug#end()
@@ -73,9 +85,9 @@ let g:deoplete#enable_at_startup = 1
 set laststatus=2
 
 " nerd tree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree ~/| endif
-map <F4> :NERDTreeToggle<CR>
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree ~/| endif
+"map <F4> :NERDTreeToggle<CR>
 
 " tagbar plugin
 nmap <F8> :TagbarToggle<CR>
@@ -96,6 +108,21 @@ let g:go_fmt_command = "goimports"
 " show types
 let g:go_auto_type_info = 1
 
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'dracula'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " maybe need later
@@ -109,8 +136,4 @@ let g:go_auto_type_info = 1
 " show tabs with special character
 "set list
 "set listchars=tab:>-,trail:~,extends:>,precedes:<
-
-" pathogen plugin manager
-" execute pathogen#infect()
-
 
