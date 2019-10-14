@@ -184,6 +184,8 @@ assign [class="Gajim"] $work3
 assign [class="gajim"] $work3
 assign [class="signal"] $work3
 assign [class="Signal"] $work3
+assign [class="discord"] $work3
+assign [class="Discord"] $work3
 assign [class="dolphin-emu"] $work5
 assign [class="rapid-photo-downloader"] $work6
 assign [class="Rapid-photo-downloader"] $work6
@@ -262,12 +264,14 @@ bindcode 233 exec xbacklight +10
 # laptop audio
 #bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 bindcode 198 exec pulseaudio-ctl mute-input
-#bindcode 121 exec pulseaudio-ctl mute
-#bindcode 122 exec pulseaudio-ctl down
-#bindcode 123 exec pulseaudio-ctl up
-bindcode 121 exec pavolume mutetoggle
-bindcode 122 exec pavolume voldown
-bindcode 123 exec pavolume volup
+
+bindcode 121 exec pulseaudio-ctl mute
+bindcode 122 exec pulseaudio-ctl down
+bindcode 123 exec pulseaudio-ctl up
+
+#bindcode 121 exec pulseaudio-ctl down
+#bindcode 122 exec pavolume voldown
+#bindcode 123 exec pavolume volup
 
 # pc audio
 bindsym $mod+Shift+KP_Multiply exec "pulseaudio-ctl mute-input"

@@ -63,6 +63,7 @@ export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 export PATH=$PATH:~/helperscripts
 export PATH=$PATH:~/helperscripts/backup
 export PATH=$PATH:~/helperscripts/photoworkflow
+export PATH=$PATH:~/helperscripts/doomlauncher
 
 # pico-8
 export PATH=$PATH:~/SynologyDrive/Linux/pico-8

@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/simon'
-let g:netrw_dirhist_2='/home/simon/.CloudStation'
-let g:netrw_dirhist_3='/home/simon'
-let g:netrw_dirhist_4='/home/simon/CloudStation'
-let g:netrw_dirhist_5='/home/simon'
-let g:netrw_dirhist_6='/home/simon/CloudStation'
-let g:netrw_dirhist_7='/home/simon/CloudStation/Notes/Linux'
-let g:netrw_dirhist_8='/home/simon/CloudStation'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/simon/.config/zandronum'

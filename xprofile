@@ -12,6 +12,7 @@ export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 # own scripts path
 export PATH=$PATH:$HOME/helperscripts
 export PATH=$PATH:$HOME/helperscripts/backup
+export PATH=$PATH:$HOME/helperscripts/doomlauncher
 export PATH=$PATH:$HOME/helperscripts/photoworkflow
 
 # gopath
