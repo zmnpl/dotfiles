@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/simon/.local/share/nvim/plugged/vim-colors-pencil/colors'
+let g:netrw_dirhist_3='/home/simon/.zprezto'
 let g:netrw_dirhist_2='/home/simon/dotfiles/i3'
 let g:netrw_dirhist_1='/home/simon/.config/zandronum'

@@ -2,10 +2,14 @@ syntax on
 " set t_Co=256
 set termguicolors
 "colorscheme vice
-colorscheme dracula
+"colorscheme dracula
+colorscheme pencil
 set number
 set encoding=utf-8
 set autoindent
+
+" leader key
+let mapleader = "\<Space>"
 
 " brackets
 inoremap {      {}<Left>
@@ -41,6 +45,8 @@ endif
 if has('nvim')
 	call plug#begin('~/.local/share/nvim/plugged')
 
+	Plug 'reedes/vim-colors-pencil'
+
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'zchee/deoplete-go', { 'do': 'make'}
 
@@ -57,6 +63,8 @@ if has('nvim')
 	" Plug 'https://github.com/scrooloose/nerdtree.git'
 else
 	call plug#begin('~/.vim/plugged')
+
+	Plug 'reedes/vim-colors-pencil'
 
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'roxma/nvim-yarp'
