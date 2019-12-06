@@ -54,7 +54,10 @@ echo "########## zprezto"
 if [ -e ~/.zprezto ]
 then
     cd ~/.zprezto
-    git submodule foreach --recursive git pull origin master
+	git branch --set-upstream-to=origin/master
+	git pull
+	git submodule update --init --recursive
+#    git submodule foreach --recursive git pull origin master
 else
     git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 fi

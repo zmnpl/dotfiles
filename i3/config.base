@@ -186,7 +186,9 @@ assign [class="signal"] $work3
 assign [class="Signal"] $work3
 assign [class="discord"] $work3
 assign [class="Discord"] $work3
+assign [title="TeamSpeak 3"] $work3
 assign [class="dolphin-emu"] $work5
+assign [class="Steam"] $work5
 assign [class="rapid-photo-downloader"] $work6
 assign [class="Rapid-photo-downloader"] $work6
 assign [class="Rapid Photo Downloader"] $work6
@@ -294,7 +296,8 @@ focus_follows_mouse no
 
 # x ui
 exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
-exec_always compton -f
+#exec_always compton -f
+exec_always picom -f
 
 # x session
 exec lxsession
@@ -302,8 +305,11 @@ exec setxkbmap -layout de
 exec numlockx
 
 # applications
-#exec guake --execute-command=htop
+exec signal-desktop
+exec discord
 exec pidgin
+exec teamspeak3
+exec steam-runtime
 #exec psensor
 exec caffeine
 exec synology-drive autostart
