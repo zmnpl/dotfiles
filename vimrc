@@ -1,9 +1,11 @@
 syntax on
 " set t_Co=256
 set termguicolors
+
 "colorscheme vice
 "colorscheme dracula
 colorscheme pencil
+
 set number
 set encoding=utf-8
 set autoindent
@@ -20,6 +22,23 @@ inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
+
+" split navigation
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+nnoremap <C-H> <C-W><C-H>
+
+" folding
+"set foldmethod=syntax
+"nnoremap <Tab> zA
+"autocmd BufWinLeave *.* mkview
+"autocmd BufWinEnter *.* silent loadview
+"g:go_fmt_experimental = 1
 
 " tabs
 filetype plugin indent on
@@ -45,20 +64,35 @@ endif
 if has('nvim')
 	call plug#begin('~/.local/share/nvim/plugged')
 
+	" colors
 	Plug 'reedes/vim-colors-pencil'
 
+	" completion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'zchee/deoplete-go', { 'do': 'make'}
 
+	" go
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'https://github.com/ntpeters/vim-better-whitespace'
 	Plug 'https://github.com/majutsushi/tagbar'
 
+	" python
+	Plug 'dense-analysis/ale'
+	Plug 'deoplete-plugins/deoplete-jedi'
+
+	" airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+
+	" git
 	Plug 'https://github.com/tpope/vim-fugitive'
 
+	" syntax checker
 	Plug 'vim-syntastic/syntastic'
+
+	" fzf
+	Plug '/usr/bin/fzf'
+	Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
 
 	" Plug 'https://github.com/scrooloose/nerdtree.git'
 else
@@ -66,25 +100,59 @@ else
 
 	Plug 'reedes/vim-colors-pencil'
 
+	" completion
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
 
+	" go
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plug 'https://github.com/ntpeters/vim-better-whitespace'
-	Plug 'vim-airline/vim-airline'
 	Plug 'https://github.com/majutsushi/tagbar'
 
+	" python
+	Plug 'dense-analysis/ale'
+	Plug 'deoplete-plugins/deoplete-jedi'
+
+	" airline
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+
+	" git
+	Plug 'https://github.com/tpope/vim-fugitive'
+
+	" syntax cecker
 	Plug 'vim-syntastic/syntastic'
 
-	Plug 'https://github.com/tpope/vim-fugitive'
+	"fzf
+	Plug '/usr/bin/fzf'
+	Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
 
 	" Plug 'https://github.com/scrooloose/nerdtree.git'
 endif
 
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" fzf
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <silent> <leader>o :FzfFiles<CR>
+nnoremap <silent> <leader>b :FzfBuffers<CR>
+
+" ALE
+"let b:ale_fixers = ['autopep8', 'yapf']
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\	'python': ['autopep8', 'yapf']
+\}
+let g:ale_linters = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\	'python': ['flake8', 'pylint']
+\}
+let g:ale_fix_on_save = 1
+"let b:ale_linters = ['flake8', 'pylint']
 
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
@@ -110,6 +178,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_auto_sameids = 1
+" add json tags in snakecase
+let g:go_addtags_transform = "snakecase"
 " automatically show identifier info
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_auto_type_info = 1
@@ -127,6 +197,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'sol'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#ale#enabled = 1
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -149,4 +220,3 @@ let g:syntastic_check_on_wq = 0
 " show tabs with special character
 "set list
 "set listchars=tab:>-,trail:~,extends:>,precedes:<
-

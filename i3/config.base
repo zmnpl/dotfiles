@@ -9,13 +9,11 @@
 set $bg-color "#000000"
 set $text-color "#ffffff"
 
-
 #set $bg-color            #2f343f
 #set $inactive-bg-color   #2f343f
 #set $text-color          #f3f4f5
 #set $inactive-text-color #676E7D
 #set $urgent-bg-color     #E53935
-
 # window colors
 #                       border              background         text                 indicator
 #client.focused          $bg-color           $bg-color          $text-color          #00ff00
@@ -35,15 +33,16 @@ set $mod Mod4
 #custom - define alt
 set $alt Mod1
 
-#font pango:monospace 12
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 14
-font pango:Iosevka 16
-#font pango:Source Code Pro 14
-#font pango:Ubunt Mono 14
-#font pango:Go Mono 15
+#font pango:monospace 12
+#font pango:DejaVu Sans Mono 16
+font pango:Ubuntu Mono 16
+#font pango:Ubuntu Regular 16
+#font pango:Source Code Pro 16
+#font pango:Ubunt Mono 16
+#font pango:Go Mono 16
+#font pango:Hack 16
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -74,7 +73,6 @@ bindsym $alt+F4 kill
 
 # custom - rofi instead of dmenu
 # mac font ... "System San Francisco Display 18"
-#bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Ubuntu 16"
 bindsym $mod+d exec rofi -show run
 
 # change focus
@@ -128,16 +126,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # custom - workspace names
-set $work1 "1  web"
-set $work2 "2  edit"
-set $work3 "3  commlink"
-set $work4 "4  ide"
-set $work5 "5  game"
-set $work6 "6  photo"
-set $work7 "7 "
-set $work8 "8"
-set $work9 "9  movie"
-set $work10 "10  music"
+set $work1 "1: web"
+set $work2 "2: edit"
+set $work3 "3: commlink"
+set $work4 "4: ide"
+set $work5 "5: game"
+set $work6 "6: photo"
+set $work7 "7:"
+set $work8 "8:"
+set $work9 "9: movie"
+set $work10 "10: music"
 
 # switch to workspace
 bindsym $mod+Control+Right workspace next
@@ -176,6 +174,8 @@ assign [class="Thunderbird"] $work1
 assign [class="Subl3"] $work2
 assign [class="Code"] $work2
 assign [class="code"] $work2
+assign [class="VSCodium"] $work2
+assign [class="vscodium"] $work2
 assign [class="sun-awt-X11-XFramePeer"] $work4
 assign [class="jetbrains-studio"] $work4
 assign [class="Pidgin"] $work3
@@ -232,27 +232,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# xfce4 bar
-#exec --no-startup-id xfce4-panel --disable-wm-check
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-		i3bar_command i3bar -t
-        #status_command i3status
-        #font pango:DejaVu Sans Mono 16
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	#3bar_command i3bar -t
+    #status_command i3status
+    #font pango:DejaVu Sans Mono 16
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
-		# pc
-		tray_output DisplayPort-0
+	# pc
+	#tray_output DisplayPort-0
 
-		# laptop
-		tray_output eDP1
+	# laptop
+	#tray_output eDP1
 
-		#tray_output primary # xrandr --output HDMI-0 --primary
-        tray_padding 2
+	#tray_output primary # xrandr --output HDMI-0 --primary
+    #tray_padding 2
 
-        #custom - marker for j4-make-config
+    #custom - marker for j4-make-config
 	# $i3-theme-bar
 }
 
@@ -296,7 +293,6 @@ focus_follows_mouse no
 
 # x ui
 exec_always feh --bg-scale /home/simon/Bilder/i3wp.jpg
-#exec_always compton -f
 exec_always picom -f
 
 # x session
@@ -306,12 +302,13 @@ exec numlockx
 
 # applications
 exec signal-desktop
-exec discord
+#exec discord
 exec pidgin
-exec teamspeak3
+#exec teamspeak3
 exec steam-runtime
 #exec psensor
 exec caffeine
+exec redshift-gtk
 exec synology-drive autostart
 
 # system tools
@@ -329,4 +326,3 @@ exec blueman-applet
 gaps inner 5
 gaps outer 0
 smart_gaps on
-

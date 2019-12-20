@@ -1,0 +1,22 @@
+# ion3 theme for i3
+# port by okraits - http://okraits.de
+
+# $i3-theme-window
+new_window normal 0
+# class                 border  backgr. text    indicator
+client.focused          #6855DE #212121 #F1F1F1 #6855DE
+client.focused_inactive #6855DE #212121 #F1F1F1 #6855DE
+client.unfocused        #6855DE #212121 #F1F1F1 #6855DE
+client.urgent           #6855DE #212121 #F1F1F1 #6855DE
+
+# $i3-theme-bar
+colors {
+	background #000000
+	statusline #ffffff
+	separator #666666
+
+	focused_workspace #212121 #212121 #F1F1F1
+	active_workspace #212121 #212121 #F1F1F1
+	inactive_workspace #212121 #212121 #F1F1F1
+	urgent_workspace #212121# #212121 #F1F1F1
+}

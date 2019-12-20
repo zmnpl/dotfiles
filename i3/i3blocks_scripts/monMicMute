@@ -1,7 +1,9 @@
 #!/bin/bash
 MUTED=$(pacmd list-sources|grep -A 15 '* index'|awk '/muted:/{ print $2 }')
 if [[ $MUTED == "yes" ]]; then
-	echo " "
+	#echo " "
+	echo "mic(!)"
 else
-	echo ""
+	echo "mic()"
+	#echo ""
 fi

@@ -29,13 +29,16 @@ ln -sf ~/dotfiles/feh ~/.config/feh
 # i3
 echo "########## i3"
 rm -rfv ~/.config/i3
-mkdir ~/.config/i3
+#mkdir ~/.config/i3
+
+ln -sf ~/dotfiles/i3 ~/.config/i3
+rm -vf ~/dotfiles/i3/i3blocks.conf
 if [ "$HOST" = Mordor-Mobil ]; then
     ln -sf ~/dotfiles/i3/i3blocks_laptop.conf ~/.config/i3/i3blocks.conf
 else
-    ln -sf ~/dotfiles/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
+    ln -sf ~/dotfiles/i3/i3blocks_pc.conf ~/.config/i3/i3blocks.conf
 fi
-ln -sf ~/dotfiles/i3/config.base ~/.config/i3/config.base
+#ln -sf ~/dotfiles/i3/themes ~/..config/i3/themes
 #ln -sf ~/dotfiles/i3/config ~/.config/i3/config
 j4-make-config
 
