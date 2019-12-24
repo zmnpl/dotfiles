@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/simon/workspace/smnpl-blog-hugo/content/post'
+let g:netrw_dirhist_0='/home/simon/workspace/smnpl-blog-hugo/content'
+let g:netrw_dirhist_9='/home/simon/workspace/smnpl-blog-hugo'
 let g:netrw_dirhist_8='/home/simon/.config/i3'
 let g:netrw_dirhist_7='/home/simon/dotfiles/i3'
 let g:netrw_dirhist_6='/boot/loader/entries'
@@ -7,4 +10,3 @@ let g:netrw_dirhist_5='/home/simon/go/src/smnpl/twad/tui'
 let g:netrw_dirhist_4='/home/simon/.local/share/nvim/plugged/vim-colors-pencil/colors'
 let g:netrw_dirhist_3='/home/simon/.zprezto'
 let g:netrw_dirhist_2='/home/simon/dotfiles/i3'
-let g:netrw_dirhist_1='/home/simon/.config/zandronum'

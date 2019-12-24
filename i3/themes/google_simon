@@ -5,6 +5,7 @@
 # accents
 set $focusAccent #AECAB8
 set $background #0A1E24
+set $foreground #ffffff
 set $lightg #6E5346
 set $white #ECF0C1
 
@@ -13,29 +14,29 @@ set $orange #FF8A3A
 set $green #94B979
 
 # i3-status
-color_bad = $green
-color_degraded = $red
-color_good = $orange
+color_bad		= $green
+color_degraded	= $red
+color_good		= $orange
 
 # $i3-background
 exec_always --no-startup-id xsetroot -solid '#2d2d2d'
 
-# <clientclass>         <border>        <bg>            <text>      <indicator>
-client.focused          $focusAccent    $focusAccent    $white      $red
-client.focused_inactive $lightg         $lightg         $white      $green
-client.unfocused        $background          $background          $white      $lightg
-client.urgent           $background          $background          $red     $red
+# <clientclass>			<border>			<bg>			<text>		<indicator>
+client.focused			$focusAccent		$focusAccent	$foreground		$red
+client.focused_inactive	$lightg				$lightg			$foreground		$green
+client.unfocused		$background			$background		$foreground		$lightg
+client.urgent			$background			$background		$red		$red
 
 # $i3-theme-bar
 colors {
     # <bar>
     background  $background
     separator   $lightg
-    statusline  $white
+    statusline  $foreground
 
-    # <workclass>       <border>            <bg>            <text>
-    focused_workspace   $focusAccent        $focusAccent    $white
-    active_workspace    $background              $background          $focusAccent
-    inactive_workspace  $background              $background          $lightg
-    urgent_workspace    $background              $background          $red
+    # <workclass>		<border>			<bg>			<text>
+    focused_workspace	$focusAccent		$focusAccent	$foreground
+    active_workspace	$background			$background		$focusAccent
+    inactive_workspace	$background			$background		$lightg
+    urgent_workspace	$background			$background		$red
 }
