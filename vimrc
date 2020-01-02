@@ -2,9 +2,8 @@ syntax on
 " set t_Co=256
 set termguicolors
 
-"colorscheme vice
 "colorscheme dracula
-colorscheme pencil
+"color pencil
 
 set number
 set encoding=utf-8
@@ -66,6 +65,7 @@ if has('nvim')
 
 	" colors
 	Plug 'reedes/vim-colors-pencil'
+	Plug 'dracula/vim', { 'as': 'dracula' }
 
 	" completion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -207,6 +207,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" colorscheme
+" colorscheme vice
+" colorscheme dracula
+colorscheme pencil
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " maybe need later

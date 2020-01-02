@@ -303,7 +303,7 @@ exec numlockx
 # applications
 exec signal-desktop
 #exec discord
-exec pidgin
+#exec pidgin
 #exec teamspeak3
 exec steam-runtime
 #exec psensor

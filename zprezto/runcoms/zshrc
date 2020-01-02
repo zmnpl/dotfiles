@@ -69,7 +69,6 @@ fi
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
-export EDITOR=vim
 
 # cdpath
 export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/SynologyDrive/:/home/simon/workspace"
@@ -93,6 +92,8 @@ function ___grep-key-code {
 }
 
 alias vim='nvim'
+export EDITOR=nvim
+alias mutt='neomutt'
 alias cp='cp -v'
 alias rm='rm -v'
 alias feh='feh -T simondefault'
