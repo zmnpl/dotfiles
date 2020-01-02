@@ -28,11 +28,12 @@ ln -sf ~/dotfiles/feh ~/.config/feh
 
 # i3
 echo "########## i3"
+# create fresh config dir
 rm -rfv ~/.config/i3
-#mkdir ~/.config/i3
-
-ln -sf ~/dotfiles/i3 ~/.config/i3
-rm -vf ~/dotfiles/i3/i3blocks.conf
+mkdir ~/.config/i3
+# link basic config
+ln -sf ~/dotfiles/i3/config.base ~/.config/i3/config.base
+# i3blocks is host specific
 if [ "$HOST" = Mordor-Mobil ]; then
     ln -sf ~/dotfiles/i3/i3blocks_laptop.conf ~/.config/i3/i3blocks.conf
 else
