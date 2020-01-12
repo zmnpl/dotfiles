@@ -10,10 +10,10 @@ export EDITOR=vim
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
 # own scripts path
-export PATH=$PATH:$HOME/helperscripts
-export PATH=$PATH:$HOME/helperscripts/backup
-export PATH=$PATH:$HOME/helperscripts/doomlauncher
-export PATH=$PATH:$HOME/helperscripts/photoworkflow
+export PATH=$PATH:$HOME/scripts
+export PATH=$PATH:$HOME/scripts/backup
+export PATH=$PATH:$HOME/scripts/doomlauncher
+export PATH=$PATH:$HOME/scripts/photoworkflow
 
 # gopath
 export GOPATH=$HOME/go

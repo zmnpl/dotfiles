@@ -71,7 +71,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
 # cdpath
-export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/SynologyDrive/:/home/simon/workspace"
+export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/Nas/:/home/simon/workspace"
 
 # android sdk
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
@@ -83,7 +83,7 @@ export PATH=$PATH:~/helperscripts/photoworkflow
 export PATH=$PATH:~/helperscripts/doomlauncher
 
 # pico-8
-export PATH=$PATH:~/SynologyDrive/Linux/pico-8
+export PATH=$PATH:~/Nas/Linux/pico-8
 
 # general stuff
 alias grep-key-code='___grep-key-code'
@@ -103,7 +103,7 @@ alias n8='systemctl suspend'
 alias gotop='gotop --color=monokai --percpu'
 # notes
 function note {
-	vim ~/SynologyDrive/Notes/$1.md
+	vim ~/Nas/Notes/$1.md
 }
 
 # pacman aliases
@@ -123,11 +123,11 @@ alias urxvtoptions="urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'"
 #alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
 
 # ssh aliases
-source ~/SynologyDrive/Linux/ssh_alias.zsh
+source ~/Nas/Linux/ssh_alias.zsh
 
 # note taking
 function ___find_note {
-	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/SynologyDrive/Notes
+	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/Nas/Notes
 }
 alias "findnote"='___find_note'
 

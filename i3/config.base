@@ -299,6 +299,7 @@ exec_always picom -f
 exec lxsession
 exec setxkbmap -layout de
 exec numlockx
+exec light-locker
 
 # applications
 exec signal-desktop

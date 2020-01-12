@@ -145,7 +145,7 @@ nnoremap <silent> <leader>b :FzfBuffers<CR>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\	'python': ['autopep8', 'yapf']
+\	'python': ['yapf', 'autopep8']
 \}
 let g:ale_linters = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
