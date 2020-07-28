@@ -22,3 +22,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # pico
 export PATH=$PATH:~/SynologyDrive/Linux/pico-8
+
+# zandronum
+alias doomseeker='vblank_mode=0 GALLIUM_HUD=fps doomseeker'

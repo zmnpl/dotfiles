@@ -1,9 +1,4 @@
 syntax on
-" set t_Co=256
-set termguicolors
-
-"colorscheme dracula
-"color pencil
 
 set number
 set encoding=utf-8
@@ -66,6 +61,9 @@ if has('nvim')
 	" colors
 	Plug 'reedes/vim-colors-pencil'
 	Plug 'dracula/vim', { 'as': 'dracula' }
+	" colors adjusting to terminal
+	Plug 'jeffkreeftmeijer/vim-dim'
+	Plug 'noahfrederick/vim-noctu'
 
 	" completion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -152,18 +150,12 @@ let g:ale_linters = {
 \	'python': ['flake8', 'pylint']
 \}
 let g:ale_fix_on_save = 1
-"let b:ale_linters = ['flake8', 'pylint']
 
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
 
 " activate airline status bar plugin
 set laststatus=2
-
-" nerd tree
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree ~/| endif
-"map <F4> :NERDTreeToggle<CR>
 
 " tagbar plugin
 nmap <F8> :TagbarToggle<CR>
@@ -208,10 +200,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" set t_Co=256
+set termguicolors
 " colorscheme
 " colorscheme vice
 " colorscheme dracula
 colorscheme pencil
+
+" terminal colors
+"colorscheme dim
+"colorscheme noctu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " maybe need later

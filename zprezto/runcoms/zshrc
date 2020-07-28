@@ -77,10 +77,10 @@ export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/Nas/:/home/s
 export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
 
 # own scripts path
-export PATH=$PATH:~/helperscripts
-export PATH=$PATH:~/helperscripts/backup
-export PATH=$PATH:~/helperscripts/photoworkflow
-export PATH=$PATH:~/helperscripts/doomlauncher
+export PATH=$PATH:~/scripts
+export PATH=$PATH:~/scripts/backup
+export PATH=$PATH:~/scripts/photoworkflow
+export PATH=$PATH:~/scripts/doomlauncher
 
 # pico-8
 export PATH=$PATH:~/Nas/Linux/pico-8
@@ -91,6 +91,7 @@ function ___grep-key-code {
 	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
 
+alias doomseeker='vblank_mode=0 GALLIUM_HUD=fps doomseeker'
 alias vim='nvim'
 export EDITOR=nvim
 alias mutt='neomutt'
