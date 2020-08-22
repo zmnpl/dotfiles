@@ -78,6 +78,12 @@ if has('nvim')
 	Plug 'dense-analysis/ale'
 	Plug 'deoplete-plugins/deoplete-jedi'
 
+	" echodoc
+	Plug 'Shougo/echodoc'
+
+	" orgmode
+	Plug 'jceb/vim-orgmode'
+
 	" airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -112,6 +118,9 @@ else
 	" python
 	Plug 'dense-analysis/ale'
 	Plug 'deoplete-plugins/deoplete-jedi'
+
+	" orgmode
+	Plug 'jceb/vim-orgmode'
 
 	" airline
 	Plug 'vim-airline/vim-airline'
@@ -159,6 +168,10 @@ set laststatus=2
 
 " tagbar plugin
 nmap <F8> :TagbarToggle<CR>
+
+" echodoc
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'virtual'
 
 " vim-go settings
 let g:go_highlight_build_constraints = 1
