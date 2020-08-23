@@ -6,6 +6,7 @@ set autoindent
 
 " leader key
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 
 " brackets
 inoremap {      {}<Left>
@@ -60,14 +61,14 @@ if has('nvim')
 
 	" colors
 	Plug 'reedes/vim-colors-pencil'
-	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'arzg/vim-colors-xcode'
 	" colors adjusting to terminal
 	Plug 'jeffkreeftmeijer/vim-dim'
 	Plug 'noahfrederick/vim-noctu'
 
 	" completion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
+"	Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 	" go
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -89,7 +90,9 @@ if has('nvim')
 	Plug 'vim-airline/vim-airline-themes'
 
 	" git
-	Plug 'https://github.com/tpope/vim-fugitive'
+	Plug 'tpope/vim-fugitive'
+	Plug 'junegunn/gv.vim'
+
 
 	" syntax checker
 	Plug 'vim-syntastic/syntastic'
@@ -98,10 +101,11 @@ if has('nvim')
 	Plug '/usr/bin/fzf'
 	Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
 
-	" Plug 'https://github.com/scrooloose/nerdtree.git'
+	Plug 'https://github.com/scrooloose/nerdtree.git'
 else
 	call plug#begin('~/.vim/plugged')
 
+	Plug 'reedes/vim-colors-pencil'
 	Plug 'reedes/vim-colors-pencil'
 
 	" completion
@@ -162,6 +166,7 @@ let g:ale_fix_on_save = 1
 
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " activate airline status bar plugin
 set laststatus=2
@@ -187,7 +192,6 @@ let g:go_auto_sameids = 1
 let g:go_addtags_transform = "snakecase"
 " automatically show identifier info
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
-let g:go_auto_type_info = 1
 set updatetime=100
 
 " highlight same variable
@@ -199,11 +203,10 @@ let g:go_auto_type_info = 1
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'sol'
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#ale#enabled = 1
-
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -216,19 +219,19 @@ let g:syntastic_check_on_wq = 0
 " set t_Co=256
 set termguicolors
 " colorscheme
-" colorscheme vice
-" colorscheme dracula
-colorscheme pencil
+"colorscheme vice
+"colorscheme dracula
 
-" terminal colors
-"colorscheme dim
-"colorscheme noctu
+set background=dark
+"colorscheme pencil
+colorscheme xcodedark
+"let g:airline_theme = 'pencil'
+let g:airline_theme = 'xcodedark'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " maybe need later
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"set background=dark
 
 " next command replaces tabstop with approriate number of spaces
 "set expandtab
