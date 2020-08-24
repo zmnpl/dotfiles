@@ -140,7 +140,7 @@ else
 	Plug '/usr/bin/fzf'
 	Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
 
-	" Plug 'https://github.com/scrooloose/nerdtree.git'
+	Plug 'https://github.com/scrooloose/nerdtree.git'
 endif
 
 call plug#end()
@@ -188,12 +188,10 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_auto_sameids = 1
-" add json tags in snakecase
 let g:go_addtags_transform = "snakecase"
 " automatically show identifier info
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 set updatetime=100
-
 " highlight same variable
 let g:go_auto_sameids = 1
 " auto import with go fmt
@@ -203,10 +201,10 @@ let g:go_auto_type_info = 1
 
 " airline
 let g:airline_powerline_fonts = 1
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#ale#enabled = 1
+
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -216,22 +214,32 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+" color settings
 " set t_Co=256
 set termguicolors
-" colorscheme
-"colorscheme vice
-"colorscheme dracula
-
 set background=dark
 "colorscheme pencil
 colorscheme xcodedark
 "let g:airline_theme = 'pencil'
 let g:airline_theme = 'xcodedark'
 
+" toggle
+function ToggleColors()
+	if (g:colors_name == "xcodedark")
+		colorscheme xcodelight
+		let g:airline_theme = 'xcodelight'
+	else
+		colorscheme xcodedark
+		let g:airline_theme = 'xcodedark'
+	endif
+endfunction
+
+nnoremap <F9> :call ToggleColors()<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " maybe need later
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 " next command replaces tabstop with approriate number of spaces
 "set expandtab
