@@ -1,5 +1,7 @@
 syntax on
 
+set shell=/usr/bin/bash
+
 set number
 set encoding=utf-8
 set autoindent
@@ -98,8 +100,10 @@ if has('nvim')
 	Plug 'vim-syntastic/syntastic'
 
 	" fzf
-	Plug '/usr/bin/fzf'
-	Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
+	"Plug '/usr/bin/fzf'
+	"Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 
 	Plug 'https://github.com/scrooloose/nerdtree.git'
 else

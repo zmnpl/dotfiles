@@ -265,24 +265,25 @@ bindcode 233 exec xbacklight +10
 
 # laptop audio
 #bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
-bindcode 198 exec pulseaudio-ctl mute-input
-
-bindcode 121 exec pulseaudio-ctl mute
-bindcode 122 exec pulseaudio-ctl down
-bindcode 123 exec pulseaudio-ctl up
-
-#bindcode 121 exec pulseaudio-ctl down
-#bindcode 122 exec pavolume voldown
-#bindcode 123 exec pavolume volup
+#bindcode 198 exec pulseaudio-ctl mute-input
+#bindcode 121 exec pulseaudio-ctl mute
+#bindcode 122 exec pulseaudio-ctl down
+#bindcode 123 exec pulseaudio-ctl up
 
 # pc audio
-bindsym $mod+Shift+KP_Multiply exec "pulseaudio-ctl mute-input"
-#bindsym $mod+Shift+KP_Divide exec "pulseaudio-ctl mute"
-#bindsym $mod+Shift+KP_Subtract exec "pulseaudio-ctl down"
-#bindsym $mod+Shift+KP_Add exec "pulseaudio-ctl up"
-bindsym $mod+Shift+KP_Divide exec "pavolume mutetoggle"
-bindsym $mod+Shift+KP_Subtract exec "pavolume voldown"
-bindsym $mod+Shift+KP_Add exec "pavolume volup"
+# Media Control Keys
+#bindcode 115 exec pulseaudio-ctl up
+#bindcode 114 exec pulseaudio-ctl down
+#bindcode 163 exec playerctl next
+#bindcode 165 exec playerctl previous
+#bindcode 164 exec playerctl play-pause
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+
+
 ################################################
 
 # custom setting
@@ -301,18 +302,12 @@ exec_always picom --fading --inactive-opacity=1 --active-opacity=1 --daemon
 # x session
 exec lxsession
 exec numlockx
-#exec light-locker
 exec setxkbmap -layout de
 
 # applications
 exec signal-desktop
-#exec discord
-#exec pidgin
-#exec teamspeak3
-#exec steam-runtime
-#exec psensor
 exec caffeine
-exec redshift-gtk
+exec redshift-gtk -l 51.53757118009987:6.542165227658574
 exec synology-drive autostart
 exec flameshot
 
@@ -320,7 +315,7 @@ exec flameshot
 exec nm-applet
 exec pasystray
 exec blueman-applet
-#exec start-pulseaudio-x11
+exec dunst
 
 # workspaces
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/i3/workspace_5.json'"
