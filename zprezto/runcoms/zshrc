@@ -31,116 +31,20 @@ compinit
 # End of lines added by compinstall
 # #############################################################
 
-# colors
-#autoload -U colors && colors
-# prompt
-#autoload -U promptinit
-#promptinit
-#prompt elite2
-#PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"
-#RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
-# fish-like syntax highlighting
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-########################################################################
-#
-
 # zsh options
 setopt extended_glob
 set -o shwordsplit
 
-# fd
-export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
+# source others
+[ -f $HOME/Nas/Linux/ssh_alias.zsh ] && . $HOME/Nas/Linux/ssh_alias.zsh
+[ -f $HOME/dotfiles/aliasrc ] && . $HOME/dotfiles/aliasrc
+[ -f $HOME/dotfiles/environmentrc ] && . $HOME/dotfiles/environmentrc
+[ -f $HOME/dotfiles/functionsrc ] && . $HOME/dotfiles/functionsrc
 
-# fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS='--reverse --preview="bat --color always --theme Nord {}" --height=40% --preview-window=right:70%:wrap'
-export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
-export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
-
-alias fzfvim='vim `fzf`'
 # source fzf key bindings
-if [[ -s "/usr/share/fzf/key-bindings.zsh" ]]; then
-  source "/usr/share/fzf/key-bindings.zsh"
-  source "/usr/share/fzf/completion.zsh"
-  source "/usr/share/fzf/key-bindings.zsh"
-fi
-
-# golang
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-
-# cdpath
-export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/Nas/:/home/simon/workspace"
-
-# android sdk
-export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
-
-# own scripts path
-export PATH=$PATH:~/scripts
-export PATH=$PATH:~/scripts/backup
-export PATH=$PATH:~/scripts/photoworkflow
-export PATH=$PATH:~/scripts/doomlauncher
-
-# pico-8
-export PATH=$PATH:~/Nas/Linux/pico-8
-
-# general stuff
-alias grep-key-code='___grep-key-code'
-function ___grep-key-code {
-	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-}
-
-alias doomseeker='vblank_mode=0 GALLIUM_HUD=fps doomseeker'
-alias vim='nvim'
-export EDITOR=nvim
-alias mutt='neomutt'
-alias cp='cp -v'
-alias rm='rm -v'
-alias feh='feh -T simondefault'
-alias fuckoff='sudo shutdown -h now'
-alias n8='systemctl suspend'
-#alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
-alias gotop='gotop --color=monokai --percpu'
-# notes
-function note {
-	vim ~/Nas/Notes/$1.md
-}
-
-# pacman aliases
-alias whatsinaur='pacman -Qqm'
-alias whatsinstalled='pacman -Qet | grep -v "^xorg" | grep -v "^xfce"'
-
-# git aliases
-alias "git-lg"="git log --oneline"
-alias "git-graph"="git log --graph"
-alias "gadd"="git add --all"
-alias "gommit"="git commit --m"
-
-# steam temporary after nvidia driver bug
-#alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
-
-# ssh aliases
-source ~/Nas/Linux/ssh_alias.zsh
-
-# note taking
-function ___find_note {
-	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/Nas/Notes
-}
-alias "findnote"='___find_note'
-
-# crypto
-# keychain
-alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
-# close crypt drives
-alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
-
-# useful
-#alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`
-
-
-#screenfetch
-neofetch
+[ -f "/usr/share/fzf/key-bindings.zsh" ] && source "/usr/share/fzf/key-bindings.zsh"
+[ -f "/usr/share/fzf/completion.zsh" ] && source "/usr/share/fzf/completion.zsh"
+[ -f "/usr/share/fzf/key-bindings.zsh" ] && source "/usr/share/fzf/key-bindings.zsh"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

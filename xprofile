@@ -1,27 +1,3 @@
-# compton
-#compton -b --config ~/.config/compton.conf --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'
-
-# golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export EDITOR=vim
-
-# android sdk
-export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
-
-# own scripts path
-export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:$HOME/scripts/backup
-export PATH=$PATH:$HOME/scripts/doomlauncher
-export PATH=$PATH:$HOME/scripts/photoworkflow
-
-# gopath
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-
-# pico
-export PATH=$PATH:~/SynologyDrive/Linux/pico-8
-
-# zandronum
-alias doomseeker='vblank_mode=0 GALLIUM_HUD=fps doomseeker'
+[ -f $HOME/dotfiles/aliasrc ] && . $HOME/dotfiles/aliasrc
+[ -f $HOME/dotfiles/environmentrc ] && . $HOME/dotfiles/environmentrc
+[ -f $HOME/dotfiles/functionsrc ] && . $HOME/dotfiles/functionsrc

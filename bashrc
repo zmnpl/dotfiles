@@ -1,28 +1,21 @@
-# variables
+# source others
+[ -f $HOME/Nas/Linux/ssh_alias.zsh ] && . $HOME/Nas/Linux/ssh_alias.zsh
+[ -f $HOME/dotfiles/aliasrc ] && . $HOME/dotfiles/aliasrc
+[ -f $HOME/dotfiles/environmentrc ] && . $HOME/dotfiles/environmentrc
+[ -f $HOME/dotfiles/functionsrc ] && . $HOME/dotfiles/functionsrc
 
-# golang
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-export EDITOR=vim
 
-# own scripts path
-export PATH=$PATH:~/CloudStation/Linux/linuxhelper
-
-#set prompt
-#PS1='`pwd` >'
-
-PS1='[\[\033[1;36m\]\u\[\033[0m\]@\h \W]\$ '
-
-#alias xflock4='light-locker-command -l'
-alias xflock4='sxlock'
-alias whatsinaur='pacman -Qqm'
-alias fotosnap='sudo rsnapshot -v daily'
-alias fucking-reboot='sudo shutdown -r now'
-alias fuckoff='sudo shutdown -h now'
-
-#pacman aliases
-alias kick='sudo pacman -Rns'
-
-#/home/simon/CloudStation/Linux_Setup/scripts/bash_pacman.sh
-screenfetch
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/simon/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/simon/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/simon/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/simon/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

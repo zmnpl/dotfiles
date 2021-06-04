@@ -1,0 +1,27 @@
+# pacman aliases
+alias whatsinaur='pacman -Qqm'
+alias whatsinstalled='pacman -Qet | grep -v "^xorg" | grep -v "^xfce"'
+# steam temporary after nvidia driver bug
+#alias steam="__GLVND_DISALLOW_PATCHING=1 steam"
+
+alias fzfvim='vim `fzf`'
+
+alias doomseeker='vblank_mode=0 GALLIUM_HUD=fps doomseeker'
+alias vim='nvim'
+alias mutt='neomutt'
+alias cp='cp -v'
+alias rm='rm -v'
+alias feh='feh -T simondefault'
+alias fuckoff='sudo shutdown -h now'
+alias n8='systemctl suspend'
+#alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
+alias gotop='gotop --color=monokai --percpu'
+
+# crypto
+# keychain
+alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
+# close crypt drives
+alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
+
+# useful
+#alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`

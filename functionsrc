@@ -1,0 +1,15 @@
+alias grep-key-code='___grep-key-code'
+function ___grep-key-code {
+	xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+
+# notes
+function note {
+	vim ~/Nas/Notes/$1.md
+}
+
+# note taking
+function ___find_note {
+	grep -rn --exclude-dir="*evernote*" --exclude-dir="*archiv*" "$1" ~/Nas/Notes
+}
+alias "findnote"='___find_note'

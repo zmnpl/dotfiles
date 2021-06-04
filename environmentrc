@@ -1,0 +1,33 @@
+# fd
+export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
+
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_OPTS='--reverse --preview="bat --color always --theme Nord {}" --height=40% --preview-window=right:70%:wrap'
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
+
+# golang
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+
+# fish-style
+#set PATH $PATH /usr/local/bin
+
+# cdpath
+export CDPATH=".:~:/home/simon/go/src/github.com/zmnpl/:/home/simon/Nas/:/home/simon/workspace"
+
+# android sdk
+export PATH=$PATH:$HOME/workspace/android-sdk-linux/platform-tools
+
+# own scripts path
+export PATH=$PATH:~/scripts
+export PATH=$PATH:~/scripts/backup
+export PATH=$PATH:~/scripts/photoworkflow
+export PATH=$PATH:~/scripts/doomlauncher
+
+# pico-8
+export PATH=$PATH:~/Nas/Linux/pico-8
+
+export EDITOR=nvim
