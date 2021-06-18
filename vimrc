@@ -105,8 +105,6 @@ if has('nvim')
 	"Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
-
-	Plug 'https://github.com/scrooloose/nerdtree.git'
 else
 	call plug#begin('~/.vim/plugged')
 
@@ -144,8 +142,6 @@ else
 	"fzf
 	Plug '/usr/bin/fzf'
 	Plug '/usr/share/vim/vimfiles/plugin/fzf/fzf.vim'
-
-	Plug 'https://github.com/scrooloose/nerdtree.git'
 endif
 
 call plug#end()
@@ -219,11 +215,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" nerdtree
-map <F4> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " color settings
 " set t_Co=256
 set termguicolors
@@ -235,7 +226,6 @@ colorscheme github
 "let g:airline_theme = 'xcodedark'
 let g:airline_theme = 'github'
 let g:github_colors_soft = 1
-
 
 " toggle
 function ToggleColors()
