@@ -64,6 +64,7 @@ if has('nvim')
 	" colors
 	Plug 'reedes/vim-colors-pencil'
 	Plug 'arzg/vim-colors-xcode'
+	Plug 'cormacrelf/vim-colors-github'
 	" colors adjusting to terminal
 	Plug 'jeffkreeftmeijer/vim-dim'
 	Plug 'noahfrederick/vim-noctu'
@@ -228,9 +229,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 set termguicolors
 set background=dark
 "colorscheme pencil
-colorscheme xcodedark
+"colorscheme xcodedark
+colorscheme github
 "let g:airline_theme = 'pencil'
-let g:airline_theme = 'xcodedark'
+"let g:airline_theme = 'xcodedark'
+let g:airline_theme = 'github'
+let g:github_colors_soft = 1
+
 
 " toggle
 function ToggleColors()
@@ -243,7 +248,8 @@ function ToggleColors()
 	endif
 endfunction
 
-nnoremap <F9> :call ToggleColors()<CR>
+"nnoremap <F9> :call ToggleColors()<CR>
+call github_colors#togglebg_map('<f9>')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " maybe need later

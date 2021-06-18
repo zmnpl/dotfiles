@@ -37,7 +37,7 @@ set $alt Mod1
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:monospace 12
 #font pango:DejaVu Sans Mono 16
-font pango:Ubuntu Mono 16
+font pango:Ubuntu Regular 13
 #font pango:Ubuntu Regular 16
 #font pango:Source Code Pro 16
 #font pango:Ubunt Mono 16
