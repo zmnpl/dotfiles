@@ -31,6 +31,13 @@ echo "########## feh"
 rm -rfv ~/.config/feh
 ln -sf ~/dotfiles/feh ~/.config/feh
 
+# dunst
+echo "########## dunst"
+rm -rf ~/.config/dunst
+ln -sf ~/dotfiles/dunst ~/.config/dunst
+killall dunst
+dunst &
+
 # i3
 echo "########## i3"
 # create fresh config dir
