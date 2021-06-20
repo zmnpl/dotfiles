@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/simon/Downloads/i3-master/.config/i3'
+let g:netrw_dirhist_6='/home/simon/Downloads/i3-master/.config'
 let g:netrw_dirhist_5='/home/simon/workspace/smnpl-blog-hugo/public/blog/2017/10/15/yet-another-arch-linux-install-process'
 let g:netrw_dirhist_4='/home/simon/.local/share/nvim/plugged/vim-colors-xcode'
 let g:netrw_dirhist_3='/home/simon/.local/share/nvim/plugged'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/home/simon/.local/share/nvim/plugged'
 let g:netrw_dirhist_0='/home/simon/workspace/twad/games'
 let g:netrw_dirhist_9='/home/simon/.config/twad'
 let g:netrw_dirhist_8='/home/simon/.offlineimap'
-let g:netrw_dirhist_7='/home/simon'
-let g:netrw_dirhist_6='/home'
