@@ -1,3 +1,5 @@
+# screen lock
+alias lock='i3lock-fancy && sleep 10 && xset dpms force off'
 # pacman aliases
 alias whatsinaur='pacman -Qqm'
 alias whatsinstalled='pacman -Qet | grep -v "^xorg" | grep -v "^xfce"'
