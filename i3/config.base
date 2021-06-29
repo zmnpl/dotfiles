@@ -74,7 +74,7 @@ bindsym $alt+F4 kill
 # custom - rofi instead of dmenu
 # mac font ... "System San Francisco Display 18"
 #bindsym $mod+d exec rofi -show run
-bindsym $mod+d exec rofi -combi-modi window,drun,ssh -font "JetBrains Mono 13" -show combi -icon-theme "WhiteSur-dark" -show-icons
+bindsym $mod+d exec "rofi -combi-modi window,drun,ssh -font 'JetBrains Mono 13' -show combi -icon-theme 'WhiteSur-dark' -show-icons"
 #bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
 # change focus
