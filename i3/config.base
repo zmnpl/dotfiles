@@ -299,7 +299,7 @@ focus_follows_mouse no
 ################################################
 
 # x ui
-exec_always feh --bg-fill /home/simon/Bilder/i3wp.jpg
+exec_always feh --bg-fill /home/simon/Pictures/i3wp.jpg
 exec_always picom --fading --inactive-opacity=1 --active-opacity=1 --daemon
 
 # x session
