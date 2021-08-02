@@ -56,9 +56,9 @@ fi
 j4-make-config
 
 # Xresources
-echo "########## Xresources"
-rm -rfv ~/.Xresources
-ln -sf ~/dotfiles/Xresources ~/.Xresources
+#echo "########## Xresources"
+#rm -rfv ~/.Xresources
+#ln -sf ~/dotfiles/Xresources ~/.Xresources
 
 # Xprofile
 echo "########## Xprofile"
