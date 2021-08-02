@@ -1,12 +1,12 @@
-Xft.autohint: false
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
-Xft.hinting: true
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.dpi: 82
+!Xft.autohint: false
+!Xft.lcdfilter: lcddefault
+!Xft.hintstyle: hintfull
+!Xft.hinting: true
+!Xft.antialias: true
+! Xft.rgba: rgb
+Xft.dpi: 109
 ! URxvt*letterSpace: 0
-Xft.rgba: none
+!Xft.rgba: none
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme

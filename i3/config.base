@@ -38,7 +38,7 @@ set $alt Mod1
 #font pango:monospace 12
 #font pango:DejaVu Sans Mono 16
 #font pango:Ubuntu Regular 13
-font pango:SF Pro Text Regular 13
+font pango:SF Pro Text Regular 11
 #font pango:Ubuntu Regular 16
 #font pango:Source Code Pro 16
 #font pango:Ubunt Mono 16
