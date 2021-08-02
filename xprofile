@@ -1,3 +1,8 @@
+# monitor
+xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165
+xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144
+
+# aliases and environment
 [ -f $HOME/dotfiles/aliasrc ] && . $HOME/dotfiles/aliasrc
 [ -f $HOME/dotfiles/environmentrc ] && . $HOME/dotfiles/environmentrc
 #[ -f $HOME/dotfiles/functionsrc ] && . $HOME/dotfiles/functionsrc
