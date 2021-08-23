@@ -310,7 +310,7 @@ exec setxkbmap -layout de
 
 # applications
 exec signal-desktop
-exec caffeine
+#exec caffeine
 exec redshift-gtk -l 51.53757118009987:6.542165227658574
 exec synology-drive autostart
 exec flameshot
