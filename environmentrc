@@ -28,7 +28,7 @@ export PATH=$PATH:~/scripts/photoworkflow
 export PATH=$PATH:~/scripts/doomlauncher
 
 # pico-8
-export PATH=$PATH:~/Nas/Linux/pico-8
+export PATH=$PATH:~/Tools/pico-8
 
 export EDITOR=nvim
 
