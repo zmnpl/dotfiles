@@ -1,6 +1,6 @@
 syntax on
 
-set shell=/usr/bin/bash
+set shell=/usr/bin/zsh
 
 set number
 set encoding=utf-8
@@ -179,7 +179,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " echodoc
 let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'virtual'
+let g:echodoc#type = 'floating'
 
 " vim-go settings
 let g:go_highlight_build_constraints = 1

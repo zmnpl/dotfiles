@@ -189,6 +189,7 @@ assign [class="Gajim"] $work5
 assign [class="gajim"] $work5
 assign [class="signal"] $work5
 assign [class="Signal"] $work5
+assign [class="qutebrowser"] $work5
 assign [class="discord"] $work5
 assign [class="Discord"] $work5
 assign [title="TeamSpeak 3"] $work5
@@ -310,6 +311,7 @@ exec setxkbmap -layout de
 
 # applications
 exec signal-desktop
+exec qutebrowser https://web.whatsapp.com/
 #exec caffeine
 exec redshift-gtk -l 51.53757118009987:6.542165227658574
 exec synology-drive autostart
