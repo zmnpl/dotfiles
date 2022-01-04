@@ -93,8 +93,8 @@ if has('nvim')
 	Plug 'vim-airline/vim-airline-themes'
 
 	" git
-	Plug 'tpope/vim-fugitive'
-	Plug 'junegunn/gv.vim'
+	"Plug 'tpope/vim-fugitive'
+	"Plug 'junegunn/gv.vim'
 
 
 	" syntax checker
@@ -134,9 +134,6 @@ else
 	" airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-
-	" git
-	Plug 'https://github.com/tpope/vim-fugitive'
 
 	" syntax cecker
 	Plug 'vim-syntastic/syntastic'
