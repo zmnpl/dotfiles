@@ -71,12 +71,13 @@ if has('nvim')
 
 	" completion
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"	Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 	" go
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-	Plug 'https://github.com/ntpeters/vim-better-whitespace'
 	Plug 'https://github.com/majutsushi/tagbar'
+
+	" whitespaces
+	Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
 	" python
 	Plug 'dense-analysis/ale'
@@ -85,9 +86,6 @@ if has('nvim')
 	" echodoc
 	Plug 'Shougo/echodoc'
 
-	" orgmode
-	Plug 'jceb/vim-orgmode'
-
 	" airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -95,7 +93,6 @@ if has('nvim')
 	" git
 	"Plug 'tpope/vim-fugitive'
 	"Plug 'junegunn/gv.vim'
-
 
 	" syntax checker
 	Plug 'vim-syntastic/syntastic'
@@ -109,7 +106,6 @@ else
 	call plug#begin('~/.vim/plugged')
 
 	Plug 'reedes/vim-colors-pencil'
-	Plug 'reedes/vim-colors-pencil'
 	Plug 'cormacrelf/vim-colors-github'
 
 
@@ -119,17 +115,18 @@ else
 	Plug 'roxma/vim-hug-neovim-rpc'
 
 	" go
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-	Plug 'https://github.com/ntpeters/vim-better-whitespace'
 	Plug 'https://github.com/majutsushi/tagbar'
+
+	" whitespaces
+	Plug 'https://github.com/ntpeters/vim-better-whitespace'
 
 	" python
 	Plug 'dense-analysis/ale'
 	Plug 'deoplete-plugins/deoplete-jedi'
 
 	" orgmode
-	Plug 'jceb/vim-orgmode'
+	"Plug 'jceb/vim-orgmode'
 
 	" airline
 	Plug 'vim-airline/vim-airline'
@@ -220,7 +217,7 @@ set termguicolors
 set background=dark
 "colorscheme pencil
 "colorscheme xcodedark
-colorscheme github
+colorscheme xcodedark
 "let g:airline_theme = 'pencil'
 "let g:airline_theme = 'xcodedark'
 let g:airline_theme = 'github'
@@ -237,16 +234,5 @@ function ToggleColors()
 	endif
 endfunction
 
-"nnoremap <F9> :call ToggleColors()<CR>
-call github_colors#togglebg_map('<f9>')
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" maybe need later
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" next command replaces tabstop with approriate number of spaces
-"set expandtab
-
-" show tabs with special character
-"set list
-"set listchars=tab:>-,trail:~,extends:>,precedes:<
+nnoremap <F9> :call ToggleColors()<CR>
+"call github_colors#togglebg_map('<f9>')
