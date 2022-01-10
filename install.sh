@@ -69,23 +69,22 @@ ln -sf ~/dotfiles/xprofile ~/.xprofile
 echo "########## zprezto"
 if [ -e ~/.zprezto ]
 then
+	# update personal fork
     cd ~/.zprezto
 	git branch --set-upstream-to=origin/master
 	git pull
+	git submodule sync --recursive
 	git submodule update --init --recursive
-   # git submodule foreach --recursive git pull origin master
+
+	# upstream
+	git remote add upstream https://github.com/sorin-ionescu/prezto.git
+	git pull upstream master
 else
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+	git clone --recursive https://github.com/zmnpl/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 
-# my zsh rc files in addition to prezto
-#setopt EXTENDED_GLOB
-#for rcfile in ~/dotfiles/zprezto/runcoms/^README.md; do
-#  echo $rcfile
-#  ln -sf "$rcfile" "~/dotfiles/zprezto/runcoms/.${rcfile:t}"
-#done
 setopt EXTENDED_GLOB
-for rcfile in ~/dotfiles/zprezto/runcoms/^README.md(.N); do
-  echo $rcfile
+#for rcfile in ~/dotfiles/zprezto/runcoms/^README.md(.N); do
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
