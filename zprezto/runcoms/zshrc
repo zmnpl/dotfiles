@@ -39,7 +39,7 @@ set -o shwordsplit
 [ -f $HOME/Nas/Linux/ssh_alias.zsh ] && . $HOME/Nas/Linux/ssh_alias.zsh
 [ -f $HOME/dotfiles/aliasrc ] && . $HOME/dotfiles/aliasrc
 [ -f $HOME/dotfiles/environmentrc ] && . $HOME/dotfiles/environmentrc
-[ -f $HOME/dotfiles/functionsrc ] && . $HOME/dotfiles/functionsrc
+[ -f $HOME/dotfiles/functionsrc.sh ] && . $HOME/dotfiles/functionsrc.sh
 
 # source fzf key bindings
 [ -f "/usr/share/fzf/key-bindings.zsh" ] && source "/usr/share/fzf/key-bindings.zsh"
