@@ -79,6 +79,7 @@ then
 	# upstream
 	git remote add upstream https://github.com/sorin-ionescu/prezto.git
 	git pull upstream master
+	cd
 else
 	git clone --recursive https://github.com/zmnpl/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
