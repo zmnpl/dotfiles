@@ -107,7 +107,7 @@ else
 
 	Plug 'reedes/vim-colors-pencil'
 	Plug 'cormacrelf/vim-colors-github'
-
+	Plug 'reedes/vim-colors-pencil'
 
 	" completion
 	Plug 'Shougo/deoplete.nvim'
