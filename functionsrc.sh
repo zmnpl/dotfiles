@@ -14,6 +14,12 @@ function ___find_note {
 }
 alias "findnote"='___find_note'
 
+meh () {
+	git add .
+	git commit --m "-"
+	git push
+}
+
 plop () {
     open=xdg-open   # this will open pdf file withthe default PDF viewer on KDE, xfce, LXDE and perhaps on other desktops.
 
