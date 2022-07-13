@@ -10,6 +10,17 @@ then
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
 fi
 
+# kitty
+echo "########## kitty"
+rm -fv ~/.config/kitty/kitty.conf
+mkdir ~/.config/kitty
+ln -sf ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
+cd ~/.config/kitty/themes
+git pull
+cd ~/dotfiles
+
+
 # fish
 echo "########## fish"
 rm -rfv ~/.config/fish

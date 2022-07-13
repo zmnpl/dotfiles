@@ -25,7 +25,7 @@ plop () {
 
     ag -U -g ".pdf$" \
     | fast-p \
-    | fzf --no-hscroll --read0 --reverse -e -d $'\t'  \
+    | fzf --height=90% --no-hscroll --read0 --reverse -e -d $'\t'  \
         --preview-window down:80% --preview '
             v=$(echo {q} | tr " " "|");
             echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
