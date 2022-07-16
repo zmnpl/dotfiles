@@ -3,3 +3,5 @@ vim/autoload/
 vim/plugged/
 backup/
 i3/config
+kitty/kitty-themes/
+kitty/mordor.conf

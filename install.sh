@@ -12,12 +12,11 @@ fi
 
 # kitty
 echo "########## kitty"
-rm -fv ~/.config/kitty/kitty.conf
-mkdir ~/.config/kitty
-ln -sf ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+rm -rfv ~/.config/kitty
+ln -sf ~/dotfiles/kitty ~/.config/kitty
 # clone themes repo
-git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
-cd ~/.config/kitty/kitty-themes
+git clone https://github.com/dexpota/kitty-themes.git ~/dotfiles/kitty/kitty-themes
+cd ~/dotfiles/kitty/kitty-themes
 git pull
 cd ~/dotfiles
 
