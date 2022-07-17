@@ -15,10 +15,10 @@ echo "########## kitty"
 rm -rfv ~/.config/kitty
 ln -sf ~/dotfiles/kitty ~/.config/kitty
 # clone themes repo
-git clone https://github.com/dexpota/kitty-themes.git ~/dotfiles/kitty/kitty-themes
-cd ~/dotfiles/kitty/kitty-themes
-git pull
-cd ~/dotfiles
+#git clone https://github.com/dexpota/kitty-themes.git ~/dotfiles/kitty/kitty-themes
+#cd ~/dotfiles/kitty/kitty-themes
+#git pull
+#cd ~/dotfiles
 
 
 # fish

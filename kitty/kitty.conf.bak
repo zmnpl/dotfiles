@@ -1082,9 +1082,3 @@ font_size 13.0
 #include ~/.config/kitty/kitty-themes/themes/Alucard.conf
 #include ~/.config/kitty/kitty-themes/themes/Glacier.conf
 include ~/.config/kitty/mordor.conf
-
-
-# BEGIN_KITTY_THEME
-# 1984 Light
-include current-theme.conf
-# END_KITTY_THEME
