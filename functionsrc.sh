@@ -24,8 +24,8 @@ plop () {
     open=xdg-open   # this will open pdf file withthe default PDF viewer on KDE, xfce, LXDE and perhaps on other desktops.
 
     ag -U -g ".pdf$" \
-    | fast-p \
-    | fzf --height=90% --no-hscroll --read0 --reverse -e -d $'\t'  \
+    | ding -fp \
+	| fzf --height=90% --no-hscroll --read0 --reverse -e -d $'\t'  \
         --preview-window down:80% --preview '
             v=$(echo {q} | tr " " "|");
             echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
