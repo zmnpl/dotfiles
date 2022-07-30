@@ -1078,13 +1078,11 @@ font_size 13.0
 
 # }}}
 
-#include /etc/kitty/tempus-themes/tempus_future.conf
-#include ~/.config/kitty/kitty-themes/themes/Alucard.conf
-#include ~/.config/kitty/kitty-themes/themes/Glacier.conf
+# device specific
 include ~/.config/kitty/mordor.conf
-
+include ~/.config/kitty/bagend.conf
 
 # BEGIN_KITTY_THEME
-# 1984 Light
+# Alien Blood
 include current-theme.conf
 # END_KITTY_THEME
