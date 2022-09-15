@@ -20,6 +20,7 @@ alias fuckoff='sudo shutdown -h now'
 alias n8='systemctl suspend'
 #alias winvm='/usr/lib/virtualbox/VirtualBox --comment "win7" --startvm "866c04cd-1173-4a34-9d7e-1ea5bb2f03c2"'
 alias gotop='gotop --color=monokai --percpu'
+alias rofi="rofi -combi-modi window,run,ssh -font 'JetBrains Mono 13' -show combi -icon-theme 'WhiteSur-dark' -show-icons"
 
 # crypto
 # keychain
