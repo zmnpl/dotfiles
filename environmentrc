@@ -35,3 +35,6 @@ export EDITOR=nvim
 # kde themes configured by qt5ct
 #export QT_QPA_PLATFORMTHEME=qt5ct
 XDG_CURRENT_DESKTOP=KDE
+
+# git passwords
+#GIT_ASKPASS='/usr/bin/ksshaskpass'

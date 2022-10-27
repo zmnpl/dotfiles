@@ -28,6 +28,8 @@ alias keychain-unlock='eval `keychain --eval --agents ssh id_rsa_space`'
 # close crypt drives
 alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
 
+alias ls='exa -l'
+
 unalias gdu
 # useful
 #alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`
