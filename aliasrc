@@ -10,6 +10,7 @@ alias fzfvim='vim `fzf`'
 alias pacin="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pacun="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 
+alias code='vscodium'
 alias doomseeker='vblank_mode=0 GALLIUM_HUD=fps doomseeker'
 alias vim='nvim'
 alias mutt='neomutt'
