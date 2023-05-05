@@ -31,6 +31,6 @@ alias cryptCloseUsbBackup='sudo cryptsetup close /dev/mapper/backupusb'
 
 alias ls='exa -l'
 
-unalias gdu
+#unalias gdu
 # useful
 #alias "listext" = `find . -type f | sed -e 's/.*\.//' | sed -e 's/.*\///' | sort | uniq -c | sort -rn`

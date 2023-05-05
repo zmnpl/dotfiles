@@ -7,6 +7,9 @@ export FZF_DEFAULT_OPTS='--reverse --preview="bat --color always --theme ansi {}
 export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
+# bat
+export BAT_THEME="ansi"
+
 # golang
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin

@@ -10,6 +10,12 @@ then
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 # handle exits from shell or function but don't exit interactive shell
 fi
 
+# .zshrc
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+
+# zim:fw
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+
 # kitty
 echo "########## kitty"
 rm -rfv ~/.config/kitty
@@ -77,26 +83,26 @@ rm -rfv ~/.xprofile
 ln -sf ~/dotfiles/xprofile ~/.xprofile
 
 # sorin zprezto
-echo "########## zprezto"
-if [ -e ~/.zprezto ]
-then
-	# update personal fork
-    cd ~/.zprezto
-	git branch --set-upstream-to=origin/master
-	git pull
-	git submodule sync --recursive
-	git submodule update --init --recursive
+#echo "########## zprezto"
+#if [ -e ~/.zprezto ]
+#then
+#	# update personal fork
+#    cd ~/.zprezto
+#	git branch --set-upstream-to=origin/master
+#	git pull
+#	git submodule sync --recursive
+#	git submodule update --init --recursive
+#
+#	# upstream
+#	git remote add upstream https://github.com/sorin-ionescu/prezto.git
+#	git pull upstream master
+#	cd
+#else
+#	git clone --recursive https://github.com/zmnpl/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+#fi
 
-	# upstream
-	git remote add upstream https://github.com/sorin-ionescu/prezto.git
-	git pull upstream master
-	cd
-else
-	git clone --recursive https://github.com/zmnpl/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-fi
-
-setopt EXTENDED_GLOB
-#for rcfile in ~/dotfiles/zprezto/runcoms/^README.md(.N); do
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+#setopt EXTENDED_GLOB
+##for rcfile in ~/dotfiles/zprezto/runcoms/^README.md(.N); do
+#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#done
