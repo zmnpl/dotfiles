@@ -1083,6 +1083,6 @@ include ~/.config/kitty/mordor.conf
 include ~/.config/kitty/bagend.conf
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Challenger Deep
 include current-theme.conf
 # END_KITTY_THEME
