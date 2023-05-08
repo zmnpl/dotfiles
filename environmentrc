@@ -1,3 +1,6 @@
+# git with kde wallet
+GIT_ASKPASS='/usr/bin/ksshaskpass'
+
 # fd
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
 
